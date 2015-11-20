@@ -39,7 +39,7 @@
     //step 1
    
     
-    [self.mapView removeAnnotations:self.mapView.annotations];
+//    [self.mapView removeAnnotations:self.mapView.annotations];
     
     PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
@@ -54,97 +54,71 @@
              
              
             float coordinateLongitutde = forCoordinate.longitude;
-                float coordinateLatitude = forCoordinate.latitude;
+            float coordinateLatitude = forCoordinate.latitude;
                 
-                CLLocationCoordinate2D pin;
-                pin.latitude = coordinateLatitude;
-                pin.longitude = coordinateLongitutde;
+            CLLocationCoordinate2D pin;
+            pin.latitude = coordinateLatitude;
+            pin.longitude = coordinateLongitutde;
              
              
-//                         //    //Create MK Coordinate Region
-//                         MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-//             
-//                         region.center.longitude = coordinateLongitutde;
-//                         region.center.latitude = coordinateLatitude;
-//                         self.boundingRegion = region;
+            //get name from PFGeoPoint
+            NSString* name = [fromQuery objectForKey:@"location"];
              
              
-             
-                         //get name from PFGeoPoint
-                         NSString* name = [fromQuery objectForKey:@"location"];
-             
-             
-                         //create annotation and set it
-                         MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-                         point.coordinate = pin;
-                         point.title = name;
+            //create annotation and set it
+            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+            point.coordinate = pin;
+            point.title = name;
                          
-                         NSLog(@"adding annotations now");
-                         [self.mapView addAnnotation:point];
-//                         [self.mapView setRegion:self.boundingRegion animated:NO];
+            NSLog(@"adding annotations now");
+            [self.mapView addAnnotation:point];
+            [self zoomToFitMapAnnotations:self.mapView];
                 
-                         
+               
                          
                      }
-
+             
+            
          }
-         
-         
-         
-         
          
      }];
     
+ 
+}
+
+-(void)zoomToFitMapAnnotations:(MKMapView*)aMapView
+{
+    if([aMapView.annotations count] == 0)
+        return;
+    
+    CLLocationCoordinate2D topLeftCoord;
+    topLeftCoord.latitude = -90;
+    topLeftCoord.longitude = 180;
+    
+    CLLocationCoordinate2D bottomRightCoord;
+    bottomRightCoord.latitude = 90;
+    bottomRightCoord.longitude = -180;
+    
+    for(MapViewAnnotation *annotation in self.mapView.annotations)
+    {
+        topLeftCoord.longitude = fmin(topLeftCoord.longitude, annotation.coordinate.longitude);
+        topLeftCoord.latitude = fmax(topLeftCoord.latitude, annotation.coordinate.latitude);
+        
+        bottomRightCoord.longitude = fmax(bottomRightCoord.longitude, annotation.coordinate.longitude);
+        bottomRightCoord.latitude = fmin(bottomRightCoord.latitude, annotation.coordinate.latitude);
+    }
+    
+    MKCoordinateRegion region;
+    region.center.latitude = topLeftCoord.latitude - (topLeftCoord.latitude - bottomRightCoord.latitude) * 0.5;
+    region.center.longitude = topLeftCoord.longitude + (bottomRightCoord.longitude - topLeftCoord.longitude) * 0.5;
+    region.span.latitudeDelta = fabs(topLeftCoord.latitude - bottomRightCoord.latitude) * 1.1; // Add a little extra space on the sides
+    region.span.longitudeDelta = fabs(bottomRightCoord.longitude - topLeftCoord.longitude) * 1.1; // Add a little extra space on the sides
+    
+    region = [aMapView regionThatFits:region];
+    [self.mapView setRegion:region animated:NO];
 }
 
 #pragma mark - create annotations
-//
-//-(void)annotationCreation {
-//    
-//    for (PFObject *fromQuery in pfObjects) {
-//        
-//        
-//        
-//        PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
-//        
-//        if (forCoordinate) {
-//            
-//            
-//            float coordinateLongitutde = forCoordinate.longitude;
-//            float coordinateLatitude = forCoordinate.latitude;
-//            
-//            
-//            //    //Create MK Coordinate Region
-//            MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-//            
-//            region.center.longitude = coordinateLongitutde;
-//            region.center.latitude = coordinateLatitude;
-//            self.boundingRegion = region;
-//            
-//            
-//            
-//            //get name from PFGeoPoint
-//            NSString* name = [fromQuery objectForKey:@"location"];
-//            
-//            
-//            //create annotation and set it
-//            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-//            point.coordinate = region.center;
-//            point.title = name;
-//            
-//            NSLog(@"adding annotations now");
-//            [self.mapView addAnnotation:point];
-//            [self.mapView setRegion:self.boundingRegion animated:YES];
-//            
-//            
-//            
-//        }
-//        
-//    }
-//    
-//    
-//}
-
 -(void)annotationCreation {
     
     MKCoordinateRegion region = self.boundingRegion;
