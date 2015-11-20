@@ -8,10 +8,11 @@
 
 #import "MainMapViewController.h"
 #import "MapViewAnnotation.h"
+#import "ApartmentInfoViewController.h"
 
 @interface MainMapViewController ()
 
-@property (nonatomic,strong)NSMutableArray *placeMarks;
+//@property (nonatomic,strong)NSMutableArray *placeMarks;
 
 
 @end
@@ -27,11 +28,15 @@
     [super viewDidLoad];
 
     
-    //     [self.mapView setRegion:self.boundingRegion animated:YES];
-    // Do any additional setup after loading the view.
+}
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [self.mapView removeAnnotations:self.mapView.annotations];
+    
 }
 
 
+#pragma mark - query parse and create annotation
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
@@ -86,6 +91,8 @@
  
 }
 
+#pragma mark - set zoom on map
+
 -(void)zoomToFitMapAnnotations:(MKMapView*)aMapView
 {
     if([aMapView.annotations count] == 0)
@@ -118,83 +125,60 @@
     [self.mapView setRegion:region animated:NO];
 }
 
-#pragma mark - create annotations
--(void)annotationCreation {
-    
-    MKCoordinateRegion region = self.boundingRegion;
+#pragma mark - customize annotations
 
 
-    
-    MKMapPoint points[[pfObjects count]];
-    
-    for (int i = 0; i<pfObjects.count; i ++) {
-        PFGeoPoint *forCoordinate = [pfObjects[i] objectForKey:@"locationCoordinates"];
-        
-        if (forCoordinate) {
-            
-        
-        
-        CLLocationCoordinate2D cordinate;
-        
-        cordinate.longitude = forCoordinate.longitude;
-        cordinate.latitude = forCoordinate.latitude;
-        
-        
-            points[i] = MKMapPointForCoordinate(cordinate); }
-        
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+    // reuse pin annotation
+    static NSString *viewId = @"MKPinAnnotationView";
+    MKPinAnnotationView *annotationView = (MKPinAnnotationView*)
+    [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
+    if (annotationView == nil) {
+        annotationView = [[MKPinAnnotationView alloc]
+                          initWithAnnotation:annotation reuseIdentifier:viewId];
     }
-    MKPolygon *poly = [MKPolygon polygonWithPoints:points count:[pfObjects count]];
-    MKMapRect rectForMap = [poly boundingMapRect];
     
-    region = MKCoordinateRegionForMapRect(rectForMap);
-    self.boundingRegion = region;
-    region = [self.mapView regionThatFits:region];
-
-    [self.mapView setRegion:self.boundingRegion animated:YES];
     
-   
+    // create a button for callout
+    UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    
+    
+    
+    [saveButton setTitle:@"Save Location" forState:UIControlStateNormal];
+    saveButton.bounds = CGRectMake(0, 0, 100, 44);
+    
+    
+    
+    //changes to standard annotation
+    annotationView.rightCalloutAccessoryView = saveButton;
+    annotationView.animatesDrop = YES;
+    annotationView.canShowCallout = YES;
+    
+    
+    return annotationView;
+    
     
     
 }
 
 
+#pragma mark - button tapped
 
-
-
-//#pragma mark - query parse
 //
-//-(void)queryParseMethod {
+//-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
 //    
+//    ApartmentInfoViewController *controller = [[ApartmentInfoViewController alloc]init];
 //    
-//    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+//    NSLog(@"button Tapped");
 //    
-//    [query whereKeyExists:@"ApartmentName"];
+//    [self.navigationController popToViewController:controller animated:YES];  
 //    
-//    
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-//        if (!error) {
-//            
-//            
-//            pfObjects = [[NSArray alloc]initWithArray:objects];
-//            
-//            //
-//            
-//            
-//            [self annotationCreation];
-//           
-//            [self viewDidDisappear:YES];
-//            [self viewDidAppear:YES];
-//        }
-//        
-//    }];
-//    
-//    
-//    
-//    
+////        [self.navigationController popViewControllerAnimated:YES];
 //    
 //}
-//
+
+
+
 
 #pragma mark - set annotation zoom
 

@@ -97,8 +97,6 @@
     // create a button for callout
     UIButton *saveButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
-    //no need for target action for now
-//    [saveButton addTarget:self action:@selector(saveToParse:) forControlEvents:UIControlEventTouchUpInside];
   
     
     [saveButton setTitle:@"Save Location" forState:UIControlStateNormal];
