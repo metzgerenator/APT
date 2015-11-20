@@ -25,212 +25,202 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     
     //     [self.mapView setRegion:self.boundingRegion animated:YES];
     // Do any additional setup after loading the view.
 }
 
--(void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    
-    
-    
-}
+
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
     //step 1
-    [self queryParseMethod];
+   
     
-    //    for (PFObject *fromQuery in pfObjects) {
-    //
-    //
-    //
-    //        PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
-    //
-    //        if (forCoordinate) {
-    //
-    //
-    //
-    //
-    //            float coordinateLongitutde = forCoordinate.longitude;
-    //            float coordinateLatitude = forCoordinate.latitude;
-    //
-    //
-    //            //    //Create MK Coordinate Region
-    //            MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-    //
-    //            region.center.longitude = coordinateLongitutde;
-    //            region.center.latitude = coordinateLatitude;
-    //            self.boundingRegion = region;
-    //
-    //
-    //
-    //            //get name from PFGeoPoint
-    //            NSString* name = [fromQuery objectForKey:@"location"];
-    //
-    //
-    //            //create annotation and set it
-    //            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-    //            point.coordinate = region.center;
-    //            point.title = name;
-    //
-    //
-    //
-    //            [self.mapView addAnnotation:point];
-    //
-    //                [self.mapView setRegion:self.boundingRegion animated:YES];
-    //
-    //        }
-    //
-    //    }
-    //
+    [self.mapView removeAnnotations:self.mapView.annotations];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
+    [query findObjectsInBackgroundWithBlock:^(NSArray *apartmentObjects, NSError *error)
+     {
+        
+         for (PFObject *fromQuery in apartmentObjects) {
+             
+            PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
+             
+            if (forCoordinate) {
+             
+             
+            float coordinateLongitutde = forCoordinate.longitude;
+                float coordinateLatitude = forCoordinate.latitude;
+                
+                CLLocationCoordinate2D pin;
+                pin.latitude = coordinateLatitude;
+                pin.longitude = coordinateLongitutde;
+             
+             
+//                         //    //Create MK Coordinate Region
+//                         MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+//             
+//                         region.center.longitude = coordinateLongitutde;
+//                         region.center.latitude = coordinateLatitude;
+//                         self.boundingRegion = region;
+             
+             
+             
+                         //get name from PFGeoPoint
+                         NSString* name = [fromQuery objectForKey:@"location"];
+             
+             
+                         //create annotation and set it
+                         MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+                         point.coordinate = pin;
+                         point.title = name;
+                         
+                         NSLog(@"adding annotations now");
+                         [self.mapView addAnnotation:point];
+//                         [self.mapView setRegion:self.boundingRegion animated:NO];
+                
+                         
+                         
+                     }
+
+         }
+         
+         
+         
+         
+         
+     }];
     
 }
 
 #pragma mark - create annotations
+//
+//-(void)annotationCreation {
+//    
+//    for (PFObject *fromQuery in pfObjects) {
+//        
+//        
+//        
+//        PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
+//        
+//        if (forCoordinate) {
+//            
+//            
+//            float coordinateLongitutde = forCoordinate.longitude;
+//            float coordinateLatitude = forCoordinate.latitude;
+//            
+//            
+//            //    //Create MK Coordinate Region
+//            MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+//            
+//            region.center.longitude = coordinateLongitutde;
+//            region.center.latitude = coordinateLatitude;
+//            self.boundingRegion = region;
+//            
+//            
+//            
+//            //get name from PFGeoPoint
+//            NSString* name = [fromQuery objectForKey:@"location"];
+//            
+//            
+//            //create annotation and set it
+//            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+//            point.coordinate = region.center;
+//            point.title = name;
+//            
+//            NSLog(@"adding annotations now");
+//            [self.mapView addAnnotation:point];
+//            [self.mapView setRegion:self.boundingRegion animated:YES];
+//            
+//            
+//            
+//        }
+//        
+//    }
+//    
+//    
+//}
 
 -(void)annotationCreation {
     
-    for (PFObject *fromQuery in pfObjects) {
-        
-        
-        
-        PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
+    MKCoordinateRegion region = self.boundingRegion;
+
+
+    
+    MKMapPoint points[[pfObjects count]];
+    
+    for (int i = 0; i<pfObjects.count; i ++) {
+        PFGeoPoint *forCoordinate = [pfObjects[i] objectForKey:@"locationCoordinates"];
         
         if (forCoordinate) {
             
-            
-            float coordinateLongitutde = forCoordinate.longitude;
-            float coordinateLatitude = forCoordinate.latitude;
-            
-            
-            //    //Create MK Coordinate Region
-            MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-            
-            region.center.longitude = coordinateLongitutde;
-            region.center.latitude = coordinateLatitude;
-            self.boundingRegion = region;
-            
-            
-            
-            //get name from PFGeoPoint
-            NSString* name = [fromQuery objectForKey:@"location"];
-            
-            
-            //create annotation and set it
-            MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-            point.coordinate = region.center;
-            point.title = name;
-            
-            NSLog(@"adding annotations now");
-            [self.mapView addAnnotation:point];
-            [self.mapView setRegion:self.boundingRegion animated:YES];
-            
-            
-            
-        }
+        
+        
+        CLLocationCoordinate2D cordinate;
+        
+        cordinate.longitude = forCoordinate.longitude;
+        cordinate.latitude = forCoordinate.latitude;
+        
+        
+            points[i] = MKMapPointForCoordinate(cordinate); }
         
     }
-    
-    
-    
-    
-    
-    
-}
-
-
-
-#pragma mark - annotation locaton
-
-
--(void)annotationLocation {
-    
-    
-    for (PFObject *fromQuery in pfObjects) {
-        
-        
-        PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
-        
-        [self.placeMarks addObject:forCoordinate];
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    ////location method
-    MKCoordinateRegion region = self.boundingRegion;
-    MKMapPoint points[[self.placeMarks count]];
-    
-    for (int i = 0;i < self.placeMarks.count; i ++) {
-        MKMapItem *mapItem = [self.placeMarks objectAtIndex:i];
-        
-        points[i] = MKMapPointForCoordinate(mapItem.placemark.coordinate);
-    }
-    
-    MKPolygon *poly = [MKPolygon polygonWithPoints:points count:[self.placeMarks count]];
-    
+    MKPolygon *poly = [MKPolygon polygonWithPoints:points count:[pfObjects count]];
     MKMapRect rectForMap = [poly boundingMapRect];
-    region = MKCoordinateRegionForMapRect(rectForMap);
-    region = MKCoordinateRegionForMapRect(rectForMap);
     
+    region = MKCoordinateRegionForMapRect(rectForMap);
     self.boundingRegion = region;
     region = [self.mapView regionThatFits:region];
-    
+
     [self.mapView setRegion:self.boundingRegion animated:YES];
     
-    [self viewDidAppear:YES];
-    
-    [self annotationCreation];
+   
     
     
 }
 
 
-#pragma mark - query parse
 
--(void)queryParseMethod {
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-    
-    [query whereKeyExists:@"ApartmentName"];
-    
-    
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (!error) {
-            
-            
-            pfObjects = [[NSArray alloc]initWithArray:objects];
-            
-            //
-            
-            
-            [self annotationCreation];
-            //test
-            
-            // test
-            
-        }
-        
-    }];
-    
-    
-    
-    
-    
-}
 
+
+//#pragma mark - query parse
+//
+//-(void)queryParseMethod {
+//    
+//    
+//    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+//    
+//    [query whereKeyExists:@"ApartmentName"];
+//    
+//    
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+//        if (!error) {
+//            
+//            
+//            pfObjects = [[NSArray alloc]initWithArray:objects];
+//            
+//            //
+//            
+//            
+//            [self annotationCreation];
+//           
+//            [self viewDidDisappear:YES];
+//            [self viewDidAppear:YES];
+//        }
+//        
+//    }];
+//    
+//    
+//    
+//    
+//    
+//}
+//
 
 #pragma mark - set annotation zoom
 
