@@ -19,6 +19,24 @@
 }
 
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    self.tabBarController.tabBar.hidden=YES;
+    
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.tabBarController.tabBar.hidden=NO;
+    
+    
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -29,6 +47,11 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+
+
+
 
 - (IBAction)signup:(id)sender {
     

@@ -19,6 +19,8 @@
     // Hide the Back Button
     
     
+    
+    
 #pragma mark - LaTiesha's Code
     
     // changing the color of the placeholder text
@@ -39,9 +41,28 @@
     
     
     
-    self.navigationItem.hidesBackButton = YES;   
+//    self.navigationItem.hidesBackButton = YES;   
   
 }
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+        self.navigationItem.hidesBackButton = YES;
+    self.tabBarController.tabBar.hidden=YES;
+    
+
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.tabBarController.tabBar.hidden=NO;
+    
+    
+}
+
+
 
 /*
 #pragma mark - Navigation
@@ -79,7 +100,10 @@
                 [self presentViewController:alertView animated:YES completion:nil];
             
             } else {
-                [self.navigationController popToRootViewControllerAnimated:YES];  
+                
+//                [self dismissViewControllerAnimated:YES completion:nil];
+                 [self.navigationController popToRootViewControllerAnimated:YES];
+            
             }
             
         }];

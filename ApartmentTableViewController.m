@@ -34,11 +34,23 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(refreshTable:)
+//                                                 name:@"refreshTable"
+//                                               object:nil];
+
+    
+}
+
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable:)
                                                  name:@"refreshTable"
                                                object:nil];
-
+    
     
 }
 
