@@ -791,7 +791,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_image-1" translatesAutoresizingMaskIntoConstraints="NO" id="xIE-uw-sAW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_image" translatesAutoresizingMaskIntoConstraints="NO" id="xIE-uw-sAW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <animations/>
                             </imageView>
@@ -838,7 +838,7 @@
                                 <rect key="frame" x="137" y="389" width="101" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Reset Password &gt;">
+                                <state key="normal" title="Reset Password">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1065,7 +1065,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="login_image-1" width="1242" height="2208"/>
+        <image name="login_image" width="1942" height="3452"/>
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
