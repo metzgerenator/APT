@@ -28,6 +28,21 @@
 
 
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    // current pfobject
+    
+    NSString *bedRooms = [self.currentPFObject objectForKey:@"numberOfBedrooms"];
+    NSString *bathRooms = [self.currentPFObject objectForKey:@"numberOfBathrooms"];
+
+    self.bedroomsLabel.text = bedRooms;
+    self.bathroomsLabel.text = bathRooms;  
+    
+}
+
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
     
