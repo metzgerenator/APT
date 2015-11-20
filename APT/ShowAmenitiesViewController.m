@@ -1,37 +1,24 @@
 //
-//  ShowAmenitiesTableViewController.m
+//  ShowAmenitiesViewController.m
 //  APT
 //
-//  Created by Aileen Taboy on 11/18/15.
+//  Created by Michael Metzger  on 11/20/15.
 //  Copyright © 2015 Mike. All rights reserved.
 //
 
-#import "ShowAmenitiesTableViewController.h"
+#import "ShowAmenitiesViewController.h"
 #import "ShowAmenitiesTableViewCell.h"
 
-@interface ShowAmenitiesTableViewController ()
+
+@interface ShowAmenitiesViewController ()
 
 @end
 
-@implementation ShowAmenitiesTableViewController
+@implementation ShowAmenitiesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-//        PFObject *objectFromParse = self.currentPFObject;
-//    
-//        NSArray *forTable  = [objectFromParse objectForKey:@"amenities"];
-//    
-//    
-//    
-//        showAmenitiesArray = forTable;
-//    
-//    
-//    //queryparsemethod
-//    
-////    [self queryParseMethod];
-    
-
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,7 +27,6 @@
 }
 
 
-#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -48,13 +34,14 @@
     return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.arrayFromSegue.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     
     static NSString *cellIdentifier = @"Cell";
     ShowAmenitiesTableViewCell *cell = (ShowAmenitiesTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -63,13 +50,10 @@
     
     
     
-    cell.showAmenitiyLabel.text = amenityString;  
+    cell.showAmenitiyLabel.text = amenityString;
     
     
     return cell;
 }
-
-
-
 
 @end

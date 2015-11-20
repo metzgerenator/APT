@@ -13,7 +13,7 @@
 #import "MapSearchViewController.h"
 #import "MapViewAnnotation.h"
 #import "EditAmenitiesViewController.h"
-#import "ShowAmenitiesTableViewController.h"
+#import "ShowAmenitiesViewController.h"
 
 
 
@@ -86,7 +86,7 @@
     //showAmenities
     
     if ([[segue identifier]isEqualToString:@"showAmenities"]){
-        ShowAmenitiesTableViewController *showEditAmenity = segue.destinationViewController;
+        ShowAmenitiesViewController *showEditAmenity = segue.destinationViewController;
         //stop user from not setting a property name
         
         if ([self.proPertyName.text length] == 0) {
