@@ -6,6 +6,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface LoginViewController ()
 
@@ -16,6 +17,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Hide the Back Button
+    
+    
+#pragma mark - LaTiesha's Code
+    
+    // changing the color of the placeholder text
+    
+    UIColor *color = [UIColor whiteColor];
+    self.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"username" attributes:@{NSForegroundColorAttributeName: color}];
+    self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"password" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    
+    // rounding the corners of the sign up and login buttons
+    
+   self.logInButton.layer.cornerRadius = 15;
+   self.logInButton.clipsToBounds = YES;
+    
+    self.signUpButton.layer.cornerRadius = 15;
+    self.signUpButton.clipsToBounds = YES;
+    
+    
+    
     
     self.navigationItem.hidesBackButton = YES;   
   
