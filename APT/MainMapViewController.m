@@ -164,16 +164,34 @@
 
 #pragma mark - button tapped
 
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    
+   
+    
+    // use the annotation view as the sender
+    
+    [self performSegueWithIdentifier:@"map" sender:view];
+
+    
+    
+}
+
+#pragma mark - prepare for segue 
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+//    
+//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+//    
+//    if ([[segue identifier] isEqualToString:@"map"]) {
+////        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//        PFObject *objet = self.pfobjectStorage;
+//        apartmentInfo.fromSegue = objet;
 //
-//-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
 //    
-//    ApartmentInfoViewController *controller = [[ApartmentInfoViewController alloc]init];
+//    }
 //    
-//    NSLog(@"button Tapped");
 //    
-//    [self.navigationController popToViewController:controller animated:YES];  
-//    
-////        [self.navigationController popViewControllerAnimated:YES];
 //    
 //}
 

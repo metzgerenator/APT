@@ -17,6 +17,11 @@
 @property (nonatomic)CLLocationCoordinate2D coordinate;
 
 
+// pfobject to send to mapInfo
+
+@property(nonatomic, strong)PFObject * pfobjectStorage;
+
+
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

@@ -1017,6 +1017,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="QJW-Xv-6NQ" id="Bj3-2v-17l"/>
+                        <segue destination="r27-ru-dyf" kind="push" identifier="map" id="DTb-wA-2R8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBa-6M-g4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1069,6 +1070,6 @@
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGQ-Y2-jlf"/>
+        <segue reference="DTb-wA-2R8"/>
     </inferredMetricsTieBreakers>
 </document>
