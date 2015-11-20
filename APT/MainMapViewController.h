@@ -19,7 +19,7 @@
 
 // pfobject to send to mapInfo
 
-@property(nonatomic, strong)PFObject * pfobjectStorage;
+@property(nonatomic, strong)PFObject * pfObjectFromMainMap;
 
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;

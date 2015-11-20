@@ -32,19 +32,7 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self queryParseMethod];
-    
-    //probably don't need this method.  Delete!!
-    //check for null and reload
-//    if (!self.pfObjectfromInfoView) {
-//        
-//        NSLog(@"pfobject is null !!");
-//        [self popoverPresentationController];
-//    }else{
-//        [self queryParseMethod];
-//
-//    }
-//    
-//}
+ 
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

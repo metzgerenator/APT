@@ -41,19 +41,19 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    //step 1
-   
-    
-//    [self.mapView removeAnnotations:self.mapView.annotations];
+  
     
     PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *apartmentObjects, NSError *error)
      {
+         pfObjects = [[NSArray alloc]initWithArray:apartmentObjects];
+         
         
          for (PFObject *fromQuery in apartmentObjects) {
              
             PFGeoPoint *forCoordinate = [fromQuery objectForKey:@"locationCoordinates"];
+            
              
             if (forCoordinate) {
              
@@ -67,7 +67,7 @@
              
              
             //get name from PFGeoPoint
-            NSString* name = [fromQuery objectForKey:@"location"];
+            NSString* name = [fromQuery objectForKey:@"ApartmentName"];
              
              
             //create annotation and set it
@@ -75,7 +75,6 @@
             point.coordinate = pin;
             point.title = name;
                          
-            NSLog(@"adding annotations now");
             [self.mapView addAnnotation:point];
             [self zoomToFitMapAnnotations:self.mapView];
                 
@@ -179,21 +178,38 @@
 
 #pragma mark - prepare for segue 
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
-//    
-//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
-//    
-//    if ([[segue identifier] isEqualToString:@"map"]) {
-////        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//        PFObject *objet = self.pfobjectStorage;
-//        apartmentInfo.fromSegue = objet;
-//
-//    
-//    }
-//    
-//    
-//    
-//}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+    
+    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+    // string for comparision
+        NSString *mapString = sender.annotation.title;
+  
+    for (PFObject *storedPfObject in pfObjects) {
+        
+        // does string match annotation
+        NSString *toCompare = [storedPfObject objectForKey:@"ApartmentName"];
+        if ([toCompare isEqualToString:mapString]) {
+            apartmentInfo.fromSegue = storedPfObject;
+        }
+      
+        
+    }
+    
+    
+
+ 
+    
+    
+    if ([[segue identifier] isEqualToString:@"map"]) {
+//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        
+       
+    
+    }
+    
+    
+    
+}
 
 
 
