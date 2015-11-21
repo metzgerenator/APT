@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -13,15 +13,48 @@
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_image" translatesAutoresizingMaskIntoConstraints="NO" id="V70-bv-qKo">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="554"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Discover and save your favorite apartment listings " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-j4-x8x">
+                                <rect key="frame" x="52" y="232" width="228" height="57"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="APT" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYX-Bx-Was">
+                                <rect key="frame" x="52" y="164" width="228" height="60"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vYX-Bx-Was" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="144" id="2uK-pO-Md1"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g5k-j4-x8x" secondAttribute="bottom" constant="279" id="4MZ-td-wic"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="top" secondItem="vYX-Bx-Was" secondAttribute="bottom" constant="8" id="6P4-MV-CEO"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OMn-zI-BsT"/>
+                            <constraint firstItem="vYX-Bx-Was" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tni-0V-NaW"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="top" secondItem="vYX-Bx-Was" secondAttribute="bottom" constant="8" id="hG9-Ay-v9h"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="52" id="jNg-ac-dai"/>
+                            <constraint firstAttribute="trailing" secondItem="g5k-j4-x8x" secondAttribute="trailing" constant="40" id="yTM-tm-BP6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="28" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="login_image" width="1942" height="3452"/>
+    </resources>
 </document>
