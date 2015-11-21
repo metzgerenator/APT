@@ -35,8 +35,12 @@
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
         self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
-        self.leasePrice.text = [self.fromSegue objectForKey:@"leasePrice"];
+        self.leasePrice.text = [NSString stringWithFormat:@"$%@",[self.fromSegue objectForKey:@"leasePrice"]];
+
         
+        
+//        [self.fromSegue objectForKey:@"leasePrice"];
+//        [NSString stringWithFormat:@"$%@",self.leasePrice.text];
         
     }else {
         
@@ -283,6 +287,9 @@
     NSString *leasePrice = self.leasePrice.text;
     
     
+//    [NSString stringWithFormat:@"$%@",self.leasePrice.text];
+    
+    
     if (self.fromSegue) {
         
         
@@ -340,10 +347,11 @@
     NSString *appointmentTime = self.appointmentDateLabel.text;
 
     NSString *leasePrice = self.leasePrice.text;
+    
+    
+    
 
     if (self.fromSegue) {
-
-        
         
         self.fromSegue.ACL = [PFACL ACLWithUser:[PFUser currentUser]];
         
