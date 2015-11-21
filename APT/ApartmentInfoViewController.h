@@ -29,7 +29,8 @@
 @property(nonatomic,strong)NSString *leaseString;
 
 
-@property (weak, nonatomic) IBOutlet UILabel *leasePriceLabel;
+@property (weak, nonatomic) IBOutlet UITextField *leasePrice;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *appointmentDateLabel;
 @property(nonatomic,strong)NSString *appointmentTime;

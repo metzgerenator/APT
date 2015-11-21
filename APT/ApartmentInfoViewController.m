@@ -35,6 +35,8 @@
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
         self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
+        self.leasePrice.text = [self.fromSegue objectForKey:@"leasePrice"];
+        
         
     }else {
         
@@ -42,6 +44,9 @@
         
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
+        
+        //Lease Price
+//        self.leasePrice.text = 
 
        
 
@@ -275,6 +280,8 @@
     
     NSString *appointmentTime = self.appointmentDateLabel.text;
     
+    NSString *leasePrice = self.leasePrice.text;
+    
     
     if (self.fromSegue) {
         
@@ -288,6 +295,8 @@
         [self.fromSegue setObject:LeaseLength forKey:@"leaseLength"];
         
         [self.fromSegue setObject:appointmentTime forKey:@"apointmentTime"];
+        
+        [self.fromSegue setObject:leasePrice forKey:@"leasePrice"];
         
         
         [self.fromSegue saveInBackground];
@@ -306,6 +315,9 @@
         [apartMentObject setObject:LeaseLength forKey:@"leaseLength"];
         
         [apartMentObject setObject:appointmentTime forKey:@"apointmentTime"];
+        
+        [apartMentObject setObject:leasePrice forKey:@"leasePrice"];
+
         
         self.fromSegue = apartMentObject;
         
@@ -327,7 +339,8 @@
     
     NSString *appointmentTime = self.appointmentDateLabel.text;
 
-    
+    NSString *leasePrice = self.leasePrice.text;
+
     if (self.fromSegue) {
 
         
@@ -341,6 +354,8 @@
         
         [self.fromSegue setObject:appointmentTime forKey:@"apointmentTime"];
         
+        [self.fromSegue setObject:leasePrice forKey:@"leasePrice"];
+
         
         [self.fromSegue saveInBackground];
 
@@ -359,6 +374,7 @@
         
     [apartMentObject setObject:appointmentTime forKey:@"apointmentTime"];
     
+    [apartMentObject setObject:leasePrice forKey:@"leasePrice"];
     
     [apartMentObject saveInBackground];
     
