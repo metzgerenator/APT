@@ -10,6 +10,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 
+@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+
+
+
 
 
 - (IBAction)signup:(id)sender;
