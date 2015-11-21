@@ -16,6 +16,12 @@
 @property (nonatomic, strong) PFObject *currentPfObject;
 
 
+@property (weak, nonatomic) IBOutlet UIButton *takePictureButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *chooseFromLibraryButton;
+
+
+
 
 @property (weak, nonatomic) IBOutlet UIImageView *previewImage;
 

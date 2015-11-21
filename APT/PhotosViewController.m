@@ -19,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+#pragma mark - LaTiesha's Code
+    
+    
+    
+    
+    // rounding the corners of the sign up and login buttons
+    
+    
+    
+    self.chooseFromLibraryButton.layer.cornerRadius = 15;
+    self.chooseFromLibraryButton.clipsToBounds = YES;
+    
+    self.takePictureButton.layer.cornerRadius = 15;
+    self.takePictureButton.clipsToBounds = YES;
+
+    
+    
+    
     
     // Do any additional setup after loading the view.
 }
