@@ -16,6 +16,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+#pragma mark - LaTiesha's Code
+    
+    // changing the color of the placeholder text
+    
+    
+    
+    UIColor *color = [UIColor whiteColor];
+    self.userName.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"username" attributes:@{NSForegroundColorAttributeName: color}];
+    self.passwordField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"password" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    self.emailField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"email" attributes:@{NSForegroundColorAttributeName: color}];
+    
+    
+    // rounding the corners of the sign up and login buttons
+    
+    
+    
+    self.signUpButton.layer.cornerRadius = 15;
+    self.signUpButton.clipsToBounds = YES;
+    
+    
+    
+    
 }
 
 

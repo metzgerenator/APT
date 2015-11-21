@@ -11,6 +11,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
+@property (weak, nonatomic) IBOutlet UIButton *backButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *resetButton;
+
+
+
 
 - (IBAction)resetButton:(id)sender;
 

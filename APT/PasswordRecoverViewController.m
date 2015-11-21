@@ -16,6 +16,33 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+#pragma mark - LaTiesha's Code
+    
+    // rounding the corners of the back and reset buttons
+  
+    self.resetButton.layer.cornerRadius = 15;
+    self.resetButton.clipsToBounds = YES;
+    
+    
+    self.backButton.layer.cornerRadius = 15;
+    self.backButton.clipsToBounds = YES;
+    
+    
+ 
+    
+    
+    
+    // changing the border color of the text field
+    
+//    [[self.emailTextField layer] setBorderColor:[[UIColor colorWithRed:94.0/255.0
+//                                                       green:87.0/255.0
+//                                                        blue:255.0/255.0
+//                                                       alpha:1.0] CGColor]];
+
+    
+    
+    
     // Do any additional setup after loading the view.
 }
 
