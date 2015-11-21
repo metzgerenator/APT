@@ -34,10 +34,9 @@
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
     
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(refreshTable:)
-//                                                 name:@"refreshTable"
-//                                               object:nil];
+    [self viewWillAppear:YES];
+    
+
 
     
 }
