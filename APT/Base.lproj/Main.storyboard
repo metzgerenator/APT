@@ -108,18 +108,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-Fm-oKl">
-                                <rect key="frame" x="115" y="159" width="144" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Choose From Library"/>
-                                <connections>
-                                    <action selector="choosePhotoFromLibrary:" destination="YFO-GA-DJ3" eventType="touchUpInside" id="rUd-Bz-xOt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBD-4p-zTu">
-                                <rect key="frame" x="145" y="197" width="85" height="30"/>
+                                <rect key="frame" x="91" y="197" width="192" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Take Picture"/>
+                                <color key="backgroundColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="mZA-Xh-jxT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Take Picture">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="TakePhoto:" destination="YFO-GA-DJ3" eventType="touchUpInside" id="W04-OS-Ypv"/>
                                 </connections>
@@ -128,10 +127,12 @@
                                 <rect key="frame" x="54" y="325" width="266" height="200"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-GC-G3f">
-                                <rect key="frame" x="22" y="28" width="52" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1u-GC-G3f">
+                                <rect key="frame" x="20" y="20" width="52" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Cancel "/>
+                                <state key="normal" title="Cancel ">
+                                    <color key="titleColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="V3C-Fn-7Mz" kind="unwind" unwindAction="unwindFromModalViewController:" id="oPJ-vP-YND"/>
                                 </connections>
@@ -139,27 +140,50 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b4J-YB-Mma">
                                 <rect key="frame" x="272" y="20" width="78" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Save Photo"/>
+                                <state key="normal" title="Save Photo">
+                                    <color key="titleColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="saveButton:" destination="YFO-GA-DJ3" eventType="touchUpInside" id="Ona-8v-VOZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mb6-Fm-oKl">
+                                <rect key="frame" x="91" y="159" width="192" height="30"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="192" id="wYx-dh-wF7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Choose From Library">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="choosePhotoFromLibrary:" destination="YFO-GA-DJ3" eventType="touchUpInside" id="rUd-Bz-xOt"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="b4J-YB-Mma" firstAttribute="top" secondItem="I1u-GC-G3f" secondAttribute="top" id="0GH-wq-gMq"/>
                             <constraint firstItem="DBD-4p-zTu" firstAttribute="centerX" secondItem="bDT-Xt-mPY" secondAttribute="centerX" id="6Jw-YT-cMx"/>
                             <constraint firstItem="bDT-Xt-mPY" firstAttribute="centerX" secondItem="aYW-ht-AKS" secondAttribute="centerX" id="96F-FI-ke5"/>
                             <constraint firstItem="DBD-4p-zTu" firstAttribute="top" secondItem="Mb6-Fm-oKl" secondAttribute="bottom" constant="8" symbolic="YES" id="AMG-85-QHj"/>
+                            <constraint firstItem="Mb6-Fm-oKl" firstAttribute="top" secondItem="WPz-UH-yFL" secondAttribute="bottom" constant="139" id="G1B-cO-OsS"/>
                             <constraint firstItem="b4J-YB-Mma" firstAttribute="top" secondItem="WPz-UH-yFL" secondAttribute="bottom" id="HN9-UB-Xt7"/>
                             <constraint firstItem="I1u-GC-G3f" firstAttribute="leading" secondItem="aYW-ht-AKS" secondAttribute="leadingMargin" constant="6" id="HV4-cQ-s2Q"/>
+                            <constraint firstItem="DBD-4p-zTu" firstAttribute="centerX" secondItem="aYW-ht-AKS" secondAttribute="centerX" id="Hp0-SL-Zrg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="b4J-YB-Mma" secondAttribute="trailing" constant="9" id="Pe3-yd-P6D"/>
                             <constraint firstItem="I1u-GC-G3f" firstAttribute="top" secondItem="WPz-UH-yFL" secondAttribute="bottom" constant="8" symbolic="YES" id="dbd-1h-azS"/>
+                            <constraint firstItem="DBD-4p-zTu" firstAttribute="width" secondItem="Mb6-Fm-oKl" secondAttribute="width" id="ero-ZW-olo"/>
                             <constraint firstItem="bDT-Xt-mPY" firstAttribute="top" secondItem="DBD-4p-zTu" secondAttribute="bottom" constant="98" id="kzc-QC-Hit"/>
                             <constraint firstItem="Mb6-Fm-oKl" firstAttribute="centerX" secondItem="DBD-4p-zTu" secondAttribute="centerX" id="lWL-Mw-a5a"/>
-                            <constraint firstItem="Mb6-Fm-oKl" firstAttribute="top" secondItem="WPz-UH-yFL" secondAttribute="bottom" constant="95" id="miq-1x-BLE"/>
+                            <constraint firstItem="Mb6-Fm-oKl" firstAttribute="top" secondItem="WPz-UH-yFL" secondAttribute="bottom" constant="139" id="miq-1x-BLE"/>
                             <constraint firstItem="bDT-Xt-mPY" firstAttribute="leading" secondItem="aYW-ht-AKS" secondAttribute="leadingMargin" constant="38" id="obv-Nv-PF6"/>
+                            <constraint firstItem="DBD-4p-zTu" firstAttribute="top" secondItem="Mb6-Fm-oKl" secondAttribute="bottom" constant="8" id="poT-dy-FIM"/>
                             <constraint firstItem="anN-TY-Bjv" firstAttribute="top" secondItem="bDT-Xt-mPY" secondAttribute="bottom" constant="142" id="vPW-gy-MAt"/>
+                            <constraint firstItem="Mb6-Fm-oKl" firstAttribute="centerX" secondItem="aYW-ht-AKS" secondAttribute="centerX" id="z6A-UR-NkR"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="aQt-2U-cNG">
@@ -167,7 +191,9 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="chooseFromLibraryButton" destination="Mb6-Fm-oKl" id="nBQ-3h-9z7"/>
                         <outlet property="previewImage" destination="bDT-Xt-mPY" id="Tfp-p4-6rc"/>
+                        <outlet property="takePictureButton" destination="DBD-4p-zTu" id="nTX-y0-fQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwT-Hy-ISe" userLabel="First Responder" sceneMemberID="firstResponder"/>
