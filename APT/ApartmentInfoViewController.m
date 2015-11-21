@@ -31,6 +31,18 @@
     [super viewDidLoad];
     
     
+#pragma mark - LaTiesha's Code
+    
+    // rounding the corners of the Amenties buttons
+    
+    self.viewAmenitiesButton.layer.cornerRadius = 15;
+    self.viewAmenitiesButton.clipsToBounds = YES;
+    
+    
+    self.changeAmenitiesButton.layer.cornerRadius = 15;
+    self.changeAmenitiesButton.clipsToBounds = YES;
+    
+    
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];

@@ -14,6 +14,13 @@
 
 @interface ApartmentInfoViewController : UIViewController  <MKAnnotation,CLLocationManagerDelegate,MKMapViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UIButton *viewAmenitiesButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *changeAmenitiesButton;
+
+
+
+
 // for maps
 
 @property (nonatomic, assign) MKCoordinateRegion boundingRegion;
