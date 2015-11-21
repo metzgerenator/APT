@@ -143,7 +143,7 @@
     
     
     
-    [saveButton setTitle:@"Summery" forState:UIControlStateNormal];
+    [saveButton setTitle:@"Details" forState:UIControlStateNormal];
     saveButton.bounds = CGRectMake(0, 0, 100, 44);
     
     
