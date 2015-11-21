@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" initialViewController="01J-lp-oVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,18 +17,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="login_image" translatesAutoresizingMaskIntoConstraints="NO" id="V70-bv-qKo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_image" translatesAutoresizingMaskIntoConstraints="NO" id="V70-bv-qKo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="554"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Discover and save your favorite apartment listings " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-j4-x8x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover and save your favorite apartment listings " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5k-j4-x8x">
                                 <rect key="frame" x="52" y="232" width="228" height="57"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="57" id="7wr-MH-JTZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Apt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYX-Bx-Was">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vYX-Bx-Was">
                                 <rect key="frame" x="52" y="164" width="228" height="60"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
@@ -38,14 +42,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vYX-Bx-Was" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="144" id="2uK-pO-Md1"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="g5k-j4-x8x" secondAttribute="bottom" constant="279" id="4MZ-td-wic"/>
-                            <constraint firstItem="g5k-j4-x8x" firstAttribute="top" secondItem="vYX-Bx-Was" secondAttribute="bottom" constant="8" id="6P4-MV-CEO"/>
-                            <constraint firstItem="g5k-j4-x8x" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OMn-zI-BsT"/>
-                            <constraint firstItem="vYX-Bx-Was" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tni-0V-NaW"/>
-                            <constraint firstItem="g5k-j4-x8x" firstAttribute="top" secondItem="vYX-Bx-Was" secondAttribute="bottom" constant="8" id="hG9-Ay-v9h"/>
-                            <constraint firstItem="g5k-j4-x8x" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="52" id="jNg-ac-dai"/>
-                            <constraint firstAttribute="trailing" secondItem="g5k-j4-x8x" secondAttribute="trailing" constant="40" id="yTM-tm-BP6"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="V70-bv-qKo" secondAttribute="bottom" constant="14" id="EM7-vl-b4j"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="leading" secondItem="vYX-Bx-Was" secondAttribute="leading" id="Fm3-4N-EO2"/>
+                            <constraint firstItem="vYX-Bx-Was" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="36" id="QtB-3N-Dic"/>
+                            <constraint firstAttribute="trailing" secondItem="V70-bv-qKo" secondAttribute="trailing" id="b6H-Fb-yRJ"/>
+                            <constraint firstItem="V70-bv-qKo" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="cOc-eA-2oG"/>
+                            <constraint firstItem="V70-bv-qKo" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fKO-x0-ol8"/>
+                            <constraint firstItem="vYX-Bx-Was" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="144" id="oLl-2l-hlO"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="top" secondItem="vYX-Bx-Was" secondAttribute="bottom" constant="8" symbolic="YES" id="ubU-Vg-As8"/>
+                            <constraint firstItem="g5k-j4-x8x" firstAttribute="trailing" secondItem="vYX-Bx-Was" secondAttribute="trailing" id="w0e-3U-jAE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vYX-Bx-Was" secondAttribute="trailing" constant="24" id="zJq-kA-5qQ"/>
                         </constraints>
                     </view>
                 </viewController>
