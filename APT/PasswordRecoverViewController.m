@@ -68,6 +68,12 @@
 }
 */
 
+- (IBAction)endEdit:(id)sender {
+    
+    [self.view endEditing:YES]; 
+    
+}
+
 - (IBAction)resetButton:(id)sender {
     
     NSString *email  = [self.emailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

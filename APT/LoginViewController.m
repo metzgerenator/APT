@@ -77,6 +77,12 @@
 }
 */
 
+- (IBAction)endEdit:(id)sender {
+    
+    
+    [self.view endEditing:YES];  
+}
+
 - (IBAction)login:(id)sender {
     
     NSString *username = [self.usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];

@@ -79,6 +79,12 @@
 
 
 
+- (IBAction)endEdit:(id)sender {
+    [self.view endEditing:YES]; 
+    
+    
+}
+
 - (IBAction)signup:(id)sender {
     
     // white space methods trims any excess white space

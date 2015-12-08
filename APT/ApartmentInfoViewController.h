@@ -20,6 +20,7 @@
 
 
 
+- (IBAction)endEdit:(id)sender;
 
 // for maps
 

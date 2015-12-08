@@ -460,4 +460,10 @@
 
 
 
+- (IBAction)endEdit:(id)sender {
+    
+    [self.view endEditing:YES];  
+    
+    
+}
 @end

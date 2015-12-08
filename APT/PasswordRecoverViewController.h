@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *resetButton;
 
+- (IBAction)endEdit:(id)sender;
 
 
 

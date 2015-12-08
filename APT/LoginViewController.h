@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 
+- (IBAction)endEdit:(id)sender;
 
 
 - (IBAction)login:(id)sender;
