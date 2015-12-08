@@ -49,6 +49,7 @@
     [super viewDidAppear:animated];
     
         self.navigationItem.hidesBackButton = YES;
+    self.navigationController.navigationBar.hidden = YES;  
     self.tabBarController.tabBar.hidden=YES;
     
 
