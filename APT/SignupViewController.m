@@ -47,6 +47,8 @@
     [super viewDidAppear:animated];
     
     self.tabBarController.tabBar.hidden=YES;
+    self.navigationController.navigationBar.hidden = NO;
+
     
     
 }

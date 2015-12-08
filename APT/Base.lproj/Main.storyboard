@@ -1052,14 +1052,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmo-68-xUI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Apt" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmo-68-xUI">
                                 <rect key="frame" x="73" y="154" width="228" height="60"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="0n9-gI-c22">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="0n9-gI-c22">
                                 <rect key="frame" x="42" y="258" width="275" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -1068,7 +1068,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-fz-ytY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="Fdi-fz-ytY">
                                 <rect key="frame" x="42" y="302" width="275" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -1077,7 +1077,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-MR-YdQ">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email " textAlignment="center" minimumFontSize="17" background="trying something out" translatesAutoresizingMaskIntoConstraints="NO" id="7DD-MR-YdQ">
                                 <rect key="frame" x="42" y="346" width="275" height="30"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
