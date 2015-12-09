@@ -1359,8 +1359,77 @@
             </objects>
             <point key="canvasLocation" x="750" y="1299.2957746478871"/>
         </scene>
+        <!--Page View Controller-->
+        <scene sceneID="v24-8h-u1M">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="GEt-RE-FAv" customClass="PageViewController" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Kk-cv-Ohy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1599" y="-897"/>
+        </scene>
+        <!--Page Content View Controller-->
+        <scene sceneID="sjH-Tj-sE9">
+            <objects>
+                <viewController storyboardIdentifier="PageContentController" id="COD-BP-Je3" customClass="PageContentViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BFm-85-0MS"/>
+                        <viewControllerLayoutGuide type="bottom" id="UtY-rf-xrC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sej-7w-2vK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Amenities_Screen" translatesAutoresizingMaskIntoConstraints="NO" id="nWk-CF-ca8">
+                                <rect key="frame" x="-1" y="141" width="601" height="459"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1td-3V-Ru5">
+                                <rect key="frame" x="520" y="0.0" width="80" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="psy-rl-35R"/>
+                                </constraints>
+                                <state key="normal" title="Get Started">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissWalkthrough:" destination="COD-BP-Je3" eventType="touchUpInside" id="Uwi-Xa-N4P"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Save all Your apartments in one place" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbJ-gD-oNW">
+                                <rect key="frame" x="0.0" y="20" width="600" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="4ly-BG-ev2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nWk-CF-ca8" firstAttribute="centerX" secondItem="gbJ-gD-oNW" secondAttribute="centerX" id="DhA-cu-pYe"/>
+                            <constraint firstItem="gbJ-gD-oNW" firstAttribute="trailing" secondItem="nWk-CF-ca8" secondAttribute="trailing" id="Jdd-mq-NwO"/>
+                            <constraint firstItem="1td-3V-Ru5" firstAttribute="top" secondItem="BFm-85-0MS" secondAttribute="bottom" id="VnS-Lb-w9N"/>
+                            <constraint firstItem="nWk-CF-ca8" firstAttribute="top" secondItem="gbJ-gD-oNW" secondAttribute="bottom" constant="27" id="cAY-PE-eIb"/>
+                            <constraint firstAttribute="trailing" secondItem="gbJ-gD-oNW" secondAttribute="trailing" id="dZ2-E4-fTq"/>
+                            <constraint firstItem="gbJ-gD-oNW" firstAttribute="leading" secondItem="Sej-7w-2vK" secondAttribute="leading" id="gDY-mn-v2u"/>
+                            <constraint firstItem="gbJ-gD-oNW" firstAttribute="trailing" secondItem="1td-3V-Ru5" secondAttribute="trailing" id="iqN-Hp-KKw"/>
+                            <constraint firstItem="nWk-CF-ca8" firstAttribute="bottom" secondItem="UtY-rf-xrC" secondAttribute="top" id="pL0-7E-DLw"/>
+                            <constraint firstItem="gbJ-gD-oNW" firstAttribute="top" secondItem="Sej-7w-2vK" secondAttribute="top" constant="20" symbolic="YES" id="rsD-9f-oo6"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="backgroundImageView" destination="nWk-CF-ca8" id="zUK-RC-Yu1"/>
+                        <outlet property="titleLabel" destination="gbJ-gD-oNW" id="ESe-mr-4Np"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eob-Vz-ss5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-944" y="-908"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Amenities_Screen" width="750" height="1334"/>
         <image name="Tab Bar Icon" width="20" height="20"/>
         <image name="login_image" width="1942" height="3452"/>
         <image name="map icon" width="20" height="20"/>
