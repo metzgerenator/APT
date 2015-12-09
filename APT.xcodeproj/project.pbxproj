@@ -14,6 +14,7 @@
 		27BDF9A31C18B8F600E30309 /* Amenities_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27BDF9A21C18B8F600E30309 /* Amenities_Screen.jpg */; };
 		27BDF9A91C18BA0100E30309 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9A61C18BA0100E30309 /* PageContentViewController.m */; };
 		27BDF9AA1C18BA0100E30309 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9A81C18BA0100E30309 /* PageViewController.m */; };
+		27BDF9AD1C18D80000E30309 /* LargePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9AC1C18D80000E30309 /* LargePhotoViewController.m */; };
 		27CF77501BFA5F7D008EA6AC /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */; };
 		27CF77531BFA7110008EA6AC /* PhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */; };
 		27E0E9971BFE5F3D0065DBC2 /* MainMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27E0E9961BFE5F3D0065DBC2 /* MainMapViewController.m */; };
@@ -70,6 +71,8 @@
 		27BDF9A61C18BA0100E30309 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		27BDF9A71C18BA0100E30309 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
 		27BDF9A81C18BA0100E30309 /* PageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageViewController.m; sourceTree = "<group>"; };
+		27BDF9AB1C18D80000E30309 /* LargePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargePhotoViewController.h; sourceTree = "<group>"; };
+		27BDF9AC1C18D80000E30309 /* LargePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargePhotoViewController.m; sourceTree = "<group>"; };
 		27CF774E1BFA5F7D008EA6AC /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		27CF774F1BFA5F7D008EA6AC /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		27CF77511BFA7110008EA6AC /* PhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewController.h; sourceTree = "<group>"; };
@@ -179,6 +182,8 @@
 				27CF77521BFA7110008EA6AC /* PhotosCollectionViewController.m */,
 				2795DDC21BFB71A3002E59E9 /* PhotosCollectionViewCell.h */,
 				2795DDC31BFB71A3002E59E9 /* PhotosCollectionViewCell.m */,
+				27BDF9AB1C18D80000E30309 /* LargePhotoViewController.h */,
+				27BDF9AC1C18D80000E30309 /* LargePhotoViewController.m */,
 			);
 			name = ApartmentPhotos;
 			sourceTree = "<group>";
@@ -539,6 +544,7 @@
 				577889171BE9530B0062FF9B /* main.m in Sources */,
 				57A2FC2B1BF7F7DB00F07FFB /* SignupViewController.m in Sources */,
 				57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */,
+				27BDF9AD1C18D80000E30309 /* LargePhotoViewController.m in Sources */,
 				57A2FC221BF7AD2700F07FFB /* CreateAptViewController.m in Sources */,
 				2795DDC41BFB71A3002E59E9 /* PhotosCollectionViewCell.m in Sources */,
 				57A2FC2C1BF7F7DB00F07FFB /* LoginViewController.m in Sources */,
