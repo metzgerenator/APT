@@ -7,6 +7,7 @@
 //
 
 #import "PhotosCollectionViewController.h"
+#import "LargePhotoViewController.h"
 
 @interface PhotosCollectionViewController ()
 
@@ -21,7 +22,7 @@
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    NSLog(@"value of pfobject is %@", self.pfObjectfromInfoView);
+//    NSLog(@"value of pfobject is %@", self.pfObjectfromInfoView);
     
     // Register cell classes
 //    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
@@ -110,35 +111,63 @@
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+#pragma mark  - navigation
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    LargePhotoViewController *largephotocontroller = segue.destinationViewController;
+//    NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+//    
+//    
+//    if ([segue.identifier isEqualToString:@"photo"]) {
+//        
+//        
+//        
+//        
+//        
+//        
+//    }
+//}
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
 
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
-}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"photo"]) {
+    NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+    LargePhotoViewController *destViewController = (LargePhotoViewController *)segue.destinationViewController;
+    [destViewController.childViewControllers firstObject];
+    NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+    destViewController.largePhoto.image = [imageFilesArray objectAtIndex:indexPath.row];
+        
+        PFObject *imageObject = [imageFilesArray objectAtIndex:indexPath.row];
+        //only pull PFobjects matching current object ID
+        
+        PFFile *imageFile = [imageObject objectForKey:@"apartmentPhotos"];
+        destViewController.fileFromSegue  = imageFile;
+        
+    
+        }
+        }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
-}
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
+
+
+
+
+                                           
+//                                           -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//                                               if ([segue.identifier isEqualToString:@"category"]) {
+//                                                   NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
+//                                                   UINavigationController *destViewController = segue.destinationViewController;
+//                                                   InputViewController *inputViewController = (InputViewController *)
+//                                                   [destViewController.childViewControllers firstObject];
+//                                                   NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
+//                                                   inputViewController.categoryPictureName = [categoryImages objectAtIndex:indexPath.row];
+//                                                   ////        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
+//                                                   
+//                                               }
+//                                           }
+
+                                           
+
+
 
 @end
