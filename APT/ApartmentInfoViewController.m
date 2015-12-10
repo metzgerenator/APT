@@ -51,18 +51,15 @@
 
         
         
-//        [self.fromSegue objectForKey:@"leasePrice"];
-//        [NSString stringWithFormat:@"$%@",self.leasePrice.text];
+
         
     }else {
         
-//        self.proPertyName.text = @"unamed property";  
         
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
         
-        //Lease Price
-//        self.leasePrice.text = 
+
 
        
 
@@ -411,6 +408,9 @@
     
     //Check for PfObject being nill
     
+    if (self.fromSegue) {
+    
+    
     //retrived PFGeoPoint from segue
     
     PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
@@ -424,8 +424,8 @@
     region.center.longitude = coordinateLongitutde;
     region.center.latitude = coordinateLatitude;
     self.boundingRegion = region;
-    
-    
+
+
     
     //get name from PFGeoPoint
     NSString* name = [self.fromSegue objectForKey:@"location"];
@@ -439,9 +439,43 @@
    
     
     [self.mapView addAnnotation:point];
+        
+    
     [self.mapView setRegion:self.boundingRegion animated:YES];
 
-    
+    } else {
+        
+        float coordinateLatitude = 40.767085;
+        float coordinateLongitutde = -73.975624;
+
+        
+        
+        MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+        region.center.longitude = coordinateLongitutde;
+        region.center.latitude = coordinateLatitude;
+        self.boundingRegion = region;
+        
+        
+        
+        //get name from PFGeoPoint
+        NSString* name = @"Hit Change Location";
+        
+        
+        //create annotation and set it
+        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+        point.coordinate = region.center;
+        point.title = name;
+        
+        
+        
+        [self.mapView addAnnotation:point];
+        
+        
+        [self.mapView setRegion:self.boundingRegion animated:YES];
+        
+        
+        
+    }
 
     
 }
