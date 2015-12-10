@@ -77,8 +77,10 @@
     self.boundingRegion = region;
     region = [self.mapView regionThatFits:region];
     
+   
+    
     [self.mapView setRegion:self.boundingRegion animated:YES];
-
+    
     
 }
 
@@ -228,6 +230,9 @@
 
 - (IBAction)searchButton:(id)sender {
     
+   
+        
+    
     
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
     request.naturalLanguageQuery = self.searchTextField.text;
@@ -240,13 +245,13 @@
     MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
         
         
+        if (response) {
+            
         
         
         //place search results in the array
         placeMarks = [response mapItems];
-        
-//        NSLog(@"place marks is %@", placeMarks);  
-        
+            
         
         //setplaceMark Locations
         
@@ -256,6 +261,8 @@
         //load our two viewdidload methods
         [self viewDidDisappear:YES];
         [self viewDidAppear:YES];
+            
+        }
         
     };
     
