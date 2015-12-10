@@ -60,6 +60,7 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self loadObjects];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(refreshTable:)

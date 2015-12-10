@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    pageTitles = @[@"View and Change the Lease Price, location and More", @"Store all your Apartments in one place", @"Easily add amenities and bedrooms"];
+    pageTitles = @[@"View and change the lease price, location and more", @"Store all your apartments in one place", @"Easily add amenities and bedrooms"];
   
     pageImages = @[@"Property_Screen.jpg", @"Properties_Screen.jpg", @"Amenities_Screen.jpg"];
     
