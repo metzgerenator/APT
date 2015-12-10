@@ -45,10 +45,11 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     
-    [self.locationManager startUpdatingLocation];
-    [self.locationManager requestWhenInUseAuthorization]; 
+//    [self.locationManager startUpdatingLocation];
+    [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView.showsUserLocation = YES;
     

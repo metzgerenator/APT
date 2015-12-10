@@ -462,8 +462,6 @@
         [self.locationManager startUpdatingLocation];
         [self.locationManager requestWhenInUseAuthorization]; // Add This Line
         
-//           self.mapView.showsUserLocation = YES;
-        
         
         //update coordinate region
         
@@ -482,21 +480,21 @@
 
 
 
-
--(void)zoomLocation {
-    
-    
-    MKCoordinateRegion region;
-    region.center = self.mapView.userLocation.coordinate;
-    //Adjust span as you like
-    MKCoordinateSpan span;
-    span.latitudeDelta  = 1;
-    span.longitudeDelta = 1;
-    region.span = span;
-    
-    
-    
-}
+//
+//-(void)zoomLocation {
+//    
+//    
+//    MKCoordinateRegion region;
+//    region.center = self.mapView.userLocation.coordinate;
+//    //Adjust span as you like
+//    MKCoordinateSpan span;
+//    span.latitudeDelta  = 1;
+//    span.longitudeDelta = 1;
+//    region.span = span;
+//    
+//    
+//    
+//}
 
 
 
