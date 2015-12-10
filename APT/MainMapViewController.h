@@ -24,4 +24,8 @@
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
+
+
+- (IBAction)logoutButton:(id)sender;
+
 @end

@@ -265,4 +265,23 @@
  }
  */
 
+
+#pragma mark - logout function
+
+- (IBAction)logoutButton:(id)sender {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:false forKey:@"hasViewedWalkthrough"];
+    
+    
+    [PFUser logOutInBackground];
+   
+    
+    
+    [NSUserDefaults resetStandardUserDefaults];
+    
+    
+     [self performSegueWithIdentifier:@"showLogin" sender:self];
+    
+}
 @end

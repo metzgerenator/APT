@@ -151,9 +151,10 @@
 
 #pragma mark - Log Out
 - (IBAction)logOutButton:(id)sender {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setBool:false forKey:@"hasViewedWalkthrough"];
     
-    
-    [PFUser logOut];
+    [PFUser logOutInBackground];
     
     // Take the user back to the login segue
     
