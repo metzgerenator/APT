@@ -7,11 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--List-->
         <scene sceneID="mc2-O3-9S6">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F1F-zU-ptm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="Tab Bar Icon" selectedImage="Tab Bar Icon" id="WbR-Ky-2By"/>
+                    <tabBarItem key="tabBarItem" title="List" image="Tab Bar Icon" selectedImage="Tab Bar Icon" id="WbR-Ky-2By"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aU8-lq-aKC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -537,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jf0-5f-OvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767.5" y="517.5"/>
+            <point key="canvasLocation" x="2407.5" y="1037.5"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="6Yd-L8-Klm">
@@ -1343,7 +1343,13 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Saved Properties " id="d9T-qE-ccA"/>
+                    <navigationItem key="navigationItem" title="Saved Properties " id="d9T-qE-ccA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="EG9-Fb-hfb">
+                            <connections>
+                                <segue destination="r27-ru-dyf" kind="show" id="8mi-NQ-AxP"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mapView" destination="QJW-Xv-6NQ" id="Bj3-2v-17l"/>
@@ -1474,6 +1480,6 @@
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yGQ-Y2-jlf"/>
+        <segue reference="DTb-wA-2R8"/>
     </inferredMetricsTieBreakers>
 </document>

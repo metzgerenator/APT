@@ -180,6 +180,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
     
+    
+    if ([segue.identifier isEqualToString:@"map"]) {
+        
+    
+    
     ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
     // string for comparision
         NSString *mapString = sender.annotation.title;
@@ -196,17 +201,10 @@
     }
     
     
-
+    }
  
     
-    
-    if ([[segue identifier] isEqualToString:@"map"]) {
-//        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-        
-       
-    
-    }
-    
+   
     
     
 }
