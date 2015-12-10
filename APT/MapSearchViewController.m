@@ -88,9 +88,17 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     // reuse pin annotation
+    
+    if (annotation == self.mapView.userLocation) {
+        return nil; 
+    }
+    
     static NSString *viewId = @"MKPinAnnotationView";
     MKPinAnnotationView *annotationView = (MKPinAnnotationView*)
     [self.mapView dequeueReusableAnnotationViewWithIdentifier:viewId];
+    
+    
+    
     if (annotationView == nil) {
         annotationView = [[MKPinAnnotationView alloc]
                           initWithAnnotation:annotation reuseIdentifier:viewId];
