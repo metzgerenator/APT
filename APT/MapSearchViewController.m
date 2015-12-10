@@ -48,7 +48,7 @@
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     [self.locationManager startUpdatingLocation];
-    [self.locationManager requestWhenInUseAuthorization]; // Add This Line
+    [self.locationManager requestWhenInUseAuthorization]; 
     
     self.mapView.showsUserLocation = YES;
     

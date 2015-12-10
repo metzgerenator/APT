@@ -19,6 +19,9 @@
 
 @interface ApartmentInfoViewController ()
 
+@property (nonatomic) CLLocationManager *locationManager;
+
+
 @end
 
 
@@ -445,33 +448,29 @@
 
     } else {
         
-        float coordinateLatitude = 40.767085;
-        float coordinateLongitutde = -73.975624;
 
         
         
-        MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-        region.center.longitude = coordinateLongitutde;
-        region.center.latitude = coordinateLatitude;
-        self.boundingRegion = region;
+        
+        // show user location
+        
+        self.locationManager = [[CLLocationManager alloc] init];
+        self.locationManager.delegate = self;
+        self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+        
+        [self.locationManager startUpdatingLocation];
+        [self.locationManager requestWhenInUseAuthorization]; // Add This Line
+        
+//           self.mapView.showsUserLocation = YES;
         
         
-        
-        //get name from PFGeoPoint
-        NSString* name = @"Hit Change Location";
+        //update coordinate region
         
         
-        //create annotation and set it
-        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-        point.coordinate = region.center;
-        point.title = name;
-        
-        
-        
-        [self.mapView addAnnotation:point];
-        
-        
-        [self.mapView setRegion:self.boundingRegion animated:YES];
+        self.mapView.showsUserLocation = YES;
+
+        self.mapView.zoomEnabled = YES;
         
         
         
@@ -484,7 +483,20 @@
 
 
 
-
+-(void)zoomLocation {
+    
+    
+    MKCoordinateRegion region;
+    region.center = self.mapView.userLocation.coordinate;
+    //Adjust span as you like
+    MKCoordinateSpan span;
+    span.latitudeDelta  = 1;
+    span.longitudeDelta = 1;
+    region.span = span;
+    
+    
+    
+}
 
 
 
