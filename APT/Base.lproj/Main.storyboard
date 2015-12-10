@@ -81,7 +81,7 @@
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="logOutButton:" destination="KEJ-2j-BLC" id="OJ9-WO-ldZ"/>
-                                <segue destination="5wU-er-nyt" kind="show" identifier="showLogin" id="51X-Zw-1mh"/>
+                                <segue destination="5wU-er-nyt" kind="show" identifier="" id="51X-Zw-1mh"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="npv-RU-BBW">
@@ -1332,7 +1332,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bm3-LL-GnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1922.5" y="-1117.5"/>
+            <point key="canvasLocation" x="1058.5" y="-941.5"/>
         </scene>
         <!--Saved Properties -->
         <scene sceneID="nW2-5T-pX1">
@@ -1358,6 +1358,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Saved Properties " id="d9T-qE-ccA">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="Sl2-4o-4Jt">
+                            <connections>
+                                <segue destination="5wU-er-nyt" kind="show" identifier="showLogin" id="nKP-C6-DQW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EG9-Fb-hfb">
                             <connections>
                                 <segue destination="r27-ru-dyf" kind="show" id="8mi-NQ-AxP"/>
@@ -1372,7 +1377,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gBa-6M-g4t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1748.4375" y="1375.8802816901407"/>
+            <point key="canvasLocation" x="1619.5" y="1232.5"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="9x3-EJ-XAq">
@@ -1388,8 +1393,8 @@
                         <color key="selectedImageTintColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="F1F-zU-ptm" kind="relationship" relationship="viewControllers" id="Bj5-Kw-aVV"/>
                         <segue destination="S5f-ID-I5G" kind="relationship" relationship="viewControllers" id="js1-9R-KTz"/>
+                        <segue destination="F1F-zU-ptm" kind="relationship" relationship="viewControllers" id="Bj5-Kw-aVV"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yG0-QS-e0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1494,6 +1499,7 @@
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DTb-wA-2R8"/>
+        <segue reference="8mi-NQ-AxP"/>
+        <segue reference="51X-Zw-1mh"/>
     </inferredMetricsTieBreakers>
 </document>
