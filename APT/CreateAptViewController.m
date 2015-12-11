@@ -81,7 +81,13 @@
     
             //    NSLog(@"date is %@", dateSelected);
     
-            self.combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
+    if (dateSelected) {
+        self.combinedDateAndTime = [NSString stringWithFormat:@"%@ on %@", timeSelected,dateSelected];
+    }else {
+        self.combinedDateAndTime = [NSString stringWithFormat:@"%@ on ?", timeSelected];
+    }
+    
+    
     
             //    NSLog(@"final time is %@", combinedDateAndTime);
     
