@@ -21,7 +21,7 @@
     [super viewDidLoad];
     pageTitles = @[@"View and change the lease price, location and more", @"Store all your apartments in one place", @"Easily add amenities and bedrooms"];
   
-    pageImages = @[@"Property_Screen.jpg", @"Properties_Screen.jpg", @"Amenities_Screen.jpg"];
+    pageImages = @[@"Property_Screen_1.jpg", @"Properties_Screen_1.jpg", @"Amenities_Screen_1.jpg"];
     
     //Set the page view data source to self
     self.dataSource = self;

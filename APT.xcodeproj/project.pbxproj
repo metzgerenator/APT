@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		27715A061BFFA78100140421 /* ShowAmenitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27715A051BFFA78100140421 /* ShowAmenitiesViewController.m */; };
 		2795DDC41BFB71A3002E59E9 /* PhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2795DDC31BFB71A3002E59E9 /* PhotosCollectionViewCell.m */; };
-		27BDF9A01C18B8E700E30309 /* Properties_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27BDF99E1C18B8E700E30309 /* Properties_Screen.jpg */; };
-		27BDF9A11C18B8E700E30309 /* Property_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27BDF99F1C18B8E700E30309 /* Property_Screen.jpg */; };
-		27BDF9A31C18B8F600E30309 /* Amenities_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 27BDF9A21C18B8F600E30309 /* Amenities_Screen.jpg */; };
 		27BDF9A91C18BA0100E30309 /* PageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9A61C18BA0100E30309 /* PageContentViewController.m */; };
 		27BDF9AA1C18BA0100E30309 /* PageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9A81C18BA0100E30309 /* PageViewController.m */; };
 		27BDF9AD1C18D80000E30309 /* LargePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF9AC1C18D80000E30309 /* LargePhotoViewController.m */; };
@@ -39,6 +36,12 @@
 		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; };
 		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; };
 		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; };
+		7B90ACC41C1A8B01002987C9 /* Property_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACC51C1A8B01002987C9 /* Amenities_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACC61C1A8B01002987C9 /* Properties_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
 		AC1AFC64CF9D7BF6272F6CB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63636AE49F7641827187C0C6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,9 +67,6 @@
 		27715A051BFFA78100140421 /* ShowAmenitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAmenitiesViewController.m; sourceTree = "<group>"; };
 		2795DDC21BFB71A3002E59E9 /* PhotosCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosCollectionViewCell.h; sourceTree = "<group>"; };
 		2795DDC31BFB71A3002E59E9 /* PhotosCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosCollectionViewCell.m; sourceTree = "<group>"; };
-		27BDF99E1C18B8E700E30309 /* Properties_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Properties_Screen.jpg; sourceTree = "<group>"; };
-		27BDF99F1C18B8E700E30309 /* Property_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Property_Screen.jpg; sourceTree = "<group>"; };
-		27BDF9A21C18B8F600E30309 /* Amenities_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amenities_Screen.jpg; sourceTree = "<group>"; };
 		27BDF9A51C18BA0100E30309 /* PageContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageContentViewController.h; sourceTree = "<group>"; };
 		27BDF9A61C18BA0100E30309 /* PageContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageContentViewController.m; sourceTree = "<group>"; };
 		27BDF9A71C18BA0100E30309 /* PageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageViewController.h; sourceTree = "<group>"; };
@@ -121,6 +121,12 @@
 		57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentTableViewCell.m; sourceTree = "<group>"; };
 		63636AE49F7641827187C0C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CA0155AF3AE0FBFF97FB4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Property_Screen.jpg; sourceTree = "<group>"; };
+		7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amenities_Screen.jpg; sourceTree = "<group>"; };
+		7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Properties_Screen.jpg; sourceTree = "<group>"; };
+		7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Property_Screen_1.jpg; sourceTree = "<group>"; };
+		7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amenities_Screen_1.jpg; sourceTree = "<group>"; };
+		7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Properties_Screen_1.jpg; sourceTree = "<group>"; };
 		B91170BF7D3CB9349B9D2569 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,9 +160,12 @@
 		27BDF99D1C18B8A900E30309 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
-				27BDF9A21C18B8F600E30309 /* Amenities_Screen.jpg */,
-				27BDF99E1C18B8E700E30309 /* Properties_Screen.jpg */,
-				27BDF99F1C18B8E700E30309 /* Property_Screen.jpg */,
+				7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */,
+				7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */,
+				7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */,
+				7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */,
+				7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */,
+				7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */,
 			);
 			name = Pictures;
 			sourceTree = "<group>";
@@ -452,13 +461,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */,
+				7B90ACC41C1A8B01002987C9 /* Property_Screen.jpg in Resources */,
 				577889251BE9530B0062FF9B /* LaunchScreen.storyboard in Resources */,
 				577889221BE9530B0062FF9B /* Assets.xcassets in Resources */,
-				27BDF9A11C18B8E700E30309 /* Property_Screen.jpg in Resources */,
+				7B90ACC61C1A8B01002987C9 /* Properties_Screen.jpg in Resources */,
+				7B90ACC51C1A8B01002987C9 /* Amenities_Screen.jpg in Resources */,
+				7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */,
+				7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */,
 				57A2FC1F1BF7A2C500F07FFB /* Podfile in Resources */,
 				577889201BE9530B0062FF9B /* Main.storyboard in Resources */,
-				27BDF9A01C18B8E700E30309 /* Properties_Screen.jpg in Resources */,
-				27BDF9A31C18B8F600E30309 /* Amenities_Screen.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
