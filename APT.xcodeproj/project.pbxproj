@@ -36,9 +36,6 @@
 		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; };
 		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; };
 		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; };
-		7B90ACC41C1A8B01002987C9 /* Property_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
-		7B90ACC51C1A8B01002987C9 /* Amenities_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
-		7B90ACC61C1A8B01002987C9 /* Properties_Screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */; settings = {ASSET_TAGS = (); }; };
 		7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
 		7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
 		7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
@@ -121,9 +118,6 @@
 		57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApartmentTableViewCell.m; sourceTree = "<group>"; };
 		63636AE49F7641827187C0C6 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79CA0155AF3AE0FBFF97FB4B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Property_Screen.jpg; sourceTree = "<group>"; };
-		7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amenities_Screen.jpg; sourceTree = "<group>"; };
-		7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Properties_Screen.jpg; sourceTree = "<group>"; };
 		7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Property_Screen_1.jpg; sourceTree = "<group>"; };
 		7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Amenities_Screen_1.jpg; sourceTree = "<group>"; };
 		7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Properties_Screen_1.jpg; sourceTree = "<group>"; };
@@ -160,9 +154,6 @@
 		27BDF99D1C18B8A900E30309 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
-				7B90ACC11C1A8B01002987C9 /* Property_Screen.jpg */,
-				7B90ACC21C1A8B01002987C9 /* Amenities_Screen.jpg */,
-				7B90ACC31C1A8B01002987C9 /* Properties_Screen.jpg */,
 				7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */,
 				7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */,
 				7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */,
@@ -462,11 +453,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */,
-				7B90ACC41C1A8B01002987C9 /* Property_Screen.jpg in Resources */,
 				577889251BE9530B0062FF9B /* LaunchScreen.storyboard in Resources */,
 				577889221BE9530B0062FF9B /* Assets.xcassets in Resources */,
-				7B90ACC61C1A8B01002987C9 /* Properties_Screen.jpg in Resources */,
-				7B90ACC51C1A8B01002987C9 /* Amenities_Screen.jpg in Resources */,
 				7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */,
 				7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */,
 				57A2FC1F1BF7A2C500F07FFB /* Podfile in Resources */,
