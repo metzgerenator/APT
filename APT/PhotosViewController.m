@@ -114,12 +114,9 @@
 }
 
 - (IBAction)saveButton:(id)sender {
-//    
-//    PFObject *game= [PFObject objectWithClassName:@"Game"];
-//    [game setObject:[PFUser currentUser] forKey:@"createdBy"];
+
     
     PFObject *forPhotos = [PFObject objectWithClassName:@"photos"];
-    
     
     //establish the relation with current object id
     
@@ -159,10 +156,7 @@
             
         }
         
-        
-        
-    }];
-    
+        }];
     
     
 }

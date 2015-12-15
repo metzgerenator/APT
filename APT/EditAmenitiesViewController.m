@@ -89,10 +89,6 @@
     
     
     
-
-
-    
-    
     
 }
 
@@ -144,6 +140,7 @@
     self.numberOfBedrooms.text = bedrooms;
     
     self.numberOfBathrooms.text = bathrooms;
+    
     
     
      [cell.amenitySwitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
@@ -233,8 +230,6 @@
     [amenities setObject:amenityList forKey:@"amenities"];
     
     
-    
-
     
     //Upload to Parse
     [amenities saveInBackground];
