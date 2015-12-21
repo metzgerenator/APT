@@ -23,33 +23,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //check for walkthrough
+//    check for walkthrough
     
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    BOOL hasViedWalkthrough = [defaults boolForKey:@"hasViewedWalkthrough"];
-//    
-//    
-//    if (!hasViedWalkthrough) {
-//        
-//        PageViewController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
-//        [self presentViewController:pageViewController animated:YES completion:nil];
-//        
-//    }
-//    
-//    
-//    
-//    //Check for logged in user
-//    PFUser *currentUser = [PFUser currentUser];
-//    
-//    if (currentUser) {
-//        
-//        NSLog(@"The Current User is %@",currentUser.username);
-//        
-//    }else {
-//        
-//        [self performSegueWithIdentifier:@"showLogin" sender:self];
-//    }
-//    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL hasViedWalkthrough = [defaults boolForKey:@"hasViewedWalkthrough"];
+    
+    
+    if (!hasViedWalkthrough) {
+        
+        PageViewController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"PageViewController"];
+        [self presentViewController:pageViewController animated:YES completion:nil];
+        
+    }
+    
+    
+    
+    //Check for logged in user
+    PFUser *currentUser = [PFUser currentUser];
+    
+    if (currentUser) {
+        
+        NSLog(@"The Current User is %@",currentUser.username);
+        
+    }else {
+        
+        [self performSegueWithIdentifier:@"showLogin" sender:self];
+    }
+//
     [self viewWillAppear:YES];
 //
 

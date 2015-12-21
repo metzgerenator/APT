@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="F1F-zU-ptm">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -67,7 +67,7 @@
                                 <animations/>
                                 <connections>
                                     <outlet property="apartmentName" destination="q6e-nv-4TT" id="1oX-cd-EdP"/>
-                                    <segue destination="RRd-vn-CD6" kind="show" identifier="apartmentInfo" id="8Pw-0e-Lbw"/>
+                                    <segue destination="r27-ru-dyf" kind="show" identifier="apartmentInfo" id="zq2-iZ-7FT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -644,7 +644,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0E-Z7-5B3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="U0E-Z7-5B3">
                                 <rect key="frame" x="0.0" y="151" width="375" height="467"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1515,7 +1515,8 @@
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bbK-fz-KFQ"/>
+        <segue reference="zq2-iZ-7FT"/>
         <segue reference="yGQ-Y2-jlf"/>
+        <segue reference="bbK-fz-KFQ"/>
     </inferredMetricsTieBreakers>
 </document>
