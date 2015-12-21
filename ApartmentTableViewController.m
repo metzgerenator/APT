@@ -135,11 +135,13 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //apartmentInfo
     
-    UITabBarController *tabar = segue.destinationViewController;
-    ApartmentInfoViewController *apartmentInfo = [tabar.viewControllers objectAtIndex:0];
+  
     
     
     if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
+        
+        UITabBarController *tabar = segue.destinationViewController;
+        ApartmentInfoViewController *apartmentInfo = [tabar.viewControllers objectAtIndex:0];
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         PFObject *objet = pfobjectStorage [selectedIndexPath.row];
         apartmentInfo.fromSegue = objet;

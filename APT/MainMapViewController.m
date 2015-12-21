@@ -55,7 +55,7 @@
 //        [self performSegueWithIdentifier:@"showLogin" sender:self];
 //    }
 //    
-    [self viewWillAppear:YES];
+//    [self viewWillAppear:YES];
     
 
 
