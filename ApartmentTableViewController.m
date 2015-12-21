@@ -134,7 +134,10 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //apartmentInfo
-    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+    
+    UITabBarController *tabar = segue.destinationViewController;
+    ApartmentInfoViewController *apartmentInfo = [tabar.viewControllers objectAtIndex:0];
+    
     
     if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
