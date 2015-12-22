@@ -388,9 +388,6 @@
                                 <state key="normal" title="View Amenities ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="3OJ-wQ-W9w" kind="show" identifier="showAmenities" id="5y0-6Z-zS9"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aok-lp-Ho9">
                                 <rect key="frame" x="63" y="348" width="249" height="30"/>
@@ -402,9 +399,6 @@
                                 <state key="normal" title="Change / Add Amenities ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="6Is-35-2JV" kind="show" identifier="editAmenities" id="8GY-7n-CSP"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="set price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-lw-y4b">
                                 <rect key="frame" x="242" y="207" width="113" height="30"/>
@@ -504,36 +498,14 @@
                     <connections>
                         <outlet property="LeaseLength" destination="ngi-Hk-8I0" id="kuM-LW-WJn"/>
                         <outlet property="appointmentDateLabel" destination="Fvl-hD-Mfa" id="2RZ-A1-Fw0"/>
-                        <outlet property="changeAmenitiesButton" destination="aok-lp-Ho9" id="lzA-KY-Obe"/>
                         <outlet property="leasePrice" destination="DBc-lw-y4b" id="reS-JU-mDx"/>
                         <outlet property="mapView" destination="y4o-HF-iTS" id="hNP-aX-6zY"/>
                         <outlet property="proPertyName" destination="n6a-eP-tmx" id="hvq-iR-MS2"/>
-                        <outlet property="viewAmenitiesButton" destination="xoo-WD-I1Q" id="aej-ow-fdu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jf0-5f-OvP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3954.5" y="1041.5"/>
-        </scene>
-        <!--Property Title -->
-        <scene sceneID="qy8-AX-DCx">
-            <objects>
-                <viewController id="h0b-f3-4Ef" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="adP-WW-FqL"/>
-                        <viewControllerLayoutGuide type="bottom" id="uGw-y6-Vzh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="c8l-Fd-i94">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Property Title " id="h6b-jx-jhl"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="J8p-x9-MYc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3987.5" y="1954.5"/>
         </scene>
         <!--Data Source-->
         <scene sceneID="6Yd-L8-Klm">
@@ -714,7 +686,13 @@
                             <constraint firstItem="mCh-d3-HKe" firstAttribute="leading" secondItem="uix-pL-vAL" secondAttribute="trailing" constant="34" id="xLB-MT-b79"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Zc-2J-vi3"/>
+                    <navigationItem key="navigationItem" id="0Zc-2J-vi3">
+                        <barButtonItem key="rightBarButtonItem" title="Edit " id="00d-Pn-jGU">
+                            <connections>
+                                <segue destination="6Is-35-2JV" kind="show" identifier="edit" id="g60-rO-mIZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="bathroomsLabel" destination="mCh-d3-HKe" id="d7r-AP-sJn"/>
@@ -724,7 +702,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8t-7I-onn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6150.5" y="1614.5"/>
+            <point key="canvasLocation" x="3975.5" y="1964.5"/>
         </scene>
         <!--Edit Amenities-->
         <scene sceneID="duq-n4-vna">
@@ -865,7 +843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0b-V9-6uX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7420.5" y="1401.5"/>
+            <point key="canvasLocation" x="4525.5" y="1964.5"/>
         </scene>
         <!--Map Search View Controller-->
         <scene sceneID="bY8-fE-IGJ">
@@ -1448,7 +1426,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="h0b-f3-4Ef" kind="relationship" relationship="rootViewController" id="6Xs-zZ-FlK"/>
+                        <segue destination="3OJ-wQ-W9w" kind="relationship" relationship="rootViewController" id="ahZ-zv-pT1"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mUC-gh-ax0" userLabel="First Responder" sceneMemberID="firstResponder"/>

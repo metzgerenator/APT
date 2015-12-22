@@ -23,6 +23,7 @@
 @property (nonatomic) CLLocationManager *locationManager;
 
 
+
 @end
 
 
@@ -65,8 +66,8 @@
         
         // Pin the object to local DataStorage
         
-        PFObject *forLocalStorage = [[PFObject alloc]init];
-        [forLocalStorage pinInBackground];  
+        
+        [self.fromSegue pinInBackground];
         
         
 
@@ -425,7 +426,7 @@
 
 - (IBAction)backButton:(id)sender {
     
-    
+    [self.fromSegue unpinInBackground]; 
     
     
     //instantiate view controller

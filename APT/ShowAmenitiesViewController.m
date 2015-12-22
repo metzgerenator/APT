@@ -31,15 +31,34 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+    
+    [query fromPin];
+    
+    
+    
+    self.currentPFObject = [query getFirstObject];
+    
     // current pfobject
     
     NSString *bedRooms = [self.currentPFObject objectForKey:@"numberOfBedrooms"];
     NSString *bathRooms = [self.currentPFObject objectForKey:@"numberOfBathrooms"];
+    self.arrayFromSegue = [self.currentPFObject objectForKey:@"amenities"];
+    
+    [self.tableView reloadData];
+    
+    NSLog(@"array is now %@", self.arrayFromSegue);
 
     self.bedroomsLabel.text = bedRooms;
     self.bathroomsLabel.text = bathRooms;  
     
 }
+
+//-(void)viewDidDisappear:(BOOL)animated {
+//    [super viewDidDisappear:animated];
+//    
+//    [self.currentPFObject unpinInBackground];
+//}
 
 
 
