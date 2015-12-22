@@ -11,7 +11,7 @@
         <!--List-->
         <scene sceneID="mc2-O3-9S6">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F1F-zU-ptm" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MainView" automaticallyAdjustsScrollViewInsets="NO" id="F1F-zU-ptm" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" image="Tab Bar Icon" selectedImage="Tab Bar Icon" id="WbR-Ky-2By"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aU8-lq-aKC">
@@ -489,7 +489,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Uxg-oZ-TJY">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="PeH-pa-JBf"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="UaO-y6-ViB">
+                            <connections>
+                                <action selector="backButton:" destination="r27-ru-dyf" id="gSB-Ef-Iet"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="PeH-pa-JBf">
+                            <connections>
+                                <action selector="saveActionButton:" destination="r27-ru-dyf" id="dLP-f2-JtS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

@@ -14,6 +14,7 @@
 #import "MapViewAnnotation.h"
 #import "EditAmenitiesViewController.h"
 #import "ShowAmenitiesViewController.h"
+#import "ApartmentTableViewController.h"
 
 
 
@@ -403,7 +404,23 @@
     }
     
     
-    [self.navigationController popViewControllerAnimated:YES];
+//    [self.navigationController popViewControllerAnimated:YES];
+    
+    ApartmentTableViewController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+    [self presentViewController:pageViewController animated:YES completion:nil];
+}
+
+- (IBAction)backButton:(id)sender {
+    
+    
+    
+    
+    //instantiate view controller
+    ApartmentTableViewController *pageViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+    [self presentViewController:pageViewController animated:YES completion:nil];
+    
+    
+    
 }
 
 

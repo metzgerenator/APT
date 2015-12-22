@@ -50,7 +50,11 @@
 @property(nonatomic,strong)PFObject *fromSegue;
 
 
+#pragma mark - save and back buttons
+
+
 - (IBAction)saveActionButton:(id)sender;
 
+- (IBAction)backButton:(id)sender;
 
 @end
