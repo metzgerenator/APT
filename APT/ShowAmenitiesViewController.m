@@ -31,6 +31,13 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    
+    //check for PFOBject being nil
+    if (self.currentPFObject) {
+    
+    
+    //Query from Local Data
+    
     PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
     [query fromPin];
@@ -38,6 +45,7 @@
     
     
     self.currentPFObject = [query getFirstObject];
+   
     
     // current pfobject
     
@@ -47,18 +55,30 @@
     
     [self.tableView reloadData];
     
-    NSLog(@"array is now %@", self.arrayFromSegue);
 
     self.bedroomsLabel.text = bedRooms;
-    self.bathroomsLabel.text = bathRooms;  
+    self.bathroomsLabel.text = bathRooms;
+    
+    //set the navbar title
+    self.navigationItem.title = [self.currentPFObject objectForKey:@"ApartmentName"];
+        
+    } else {
+        [self alertView];
+        
+    }
+    
     
 }
 
-//-(void)viewDidDisappear:(BOOL)animated {
-//    [super viewDidDisappear:animated];
-//    
-//    [self.currentPFObject unpinInBackground];
-//}
+
+-(void)alertView {
+    UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {}];
+    
+    [alertView addAction:defaultAction];
+    [self presentViewController:alertView animated:YES completion:nil];
+}
 
 
 

@@ -704,7 +704,7 @@
             </objects>
             <point key="canvasLocation" x="3975.5" y="1964.5"/>
         </scene>
-        <!--Edit Amenities-->
+        <!--Edit Amenities View Controller-->
         <scene sceneID="duq-n4-vna">
             <objects>
                 <viewController id="6Is-35-2JV" customClass="EditAmenitiesViewController" sceneMemberID="viewController">
@@ -826,7 +826,7 @@
                             <constraint firstItem="Wrv-YY-F6U" firstAttribute="trailing" secondItem="pwr-jh-DVT" secondAttribute="trailing" id="yzn-Jh-gwK"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Amenities" id="xRd-zr-UH8">
+                    <navigationItem key="navigationItem" id="xRd-zr-UH8">
                         <barButtonItem key="rightBarButtonItem" title="Save" id="29K-u1-Vyx">
                             <connections>
                                 <action selector="saveToParse:" destination="6Is-35-2JV" id="Hug-bA-0Bm"/>

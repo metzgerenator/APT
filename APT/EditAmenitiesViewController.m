@@ -37,6 +37,24 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+    
+    [query fromPin];
+    
+    self.currentPFObject = [query getFirstObject];
+    
+    self.arrayFromSegue = [self.currentPFObject objectForKey:@"amenities"];
+    
+   
+    
+    // Change the navBar title
+    
+    
+    NSString *forNavBar = [self.currentPFObject objectForKey:@"ApartmentName"];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"Edit %@",forNavBar];
+    
+  
     
     
     
@@ -233,6 +251,12 @@
     
     //Upload to Parse
     [amenities saveInBackground];
+    
+    //pin and unpin from local storage
+    
+    [self.currentPFObject unpinInBackground];
+    
+    [self.currentPFObject  pinInBackground];
     
     [self.navigationController popViewControllerAnimated:YES];
 

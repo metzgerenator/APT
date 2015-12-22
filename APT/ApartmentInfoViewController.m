@@ -49,6 +49,8 @@
     self.changeAmenitiesButton.layer.cornerRadius = 15;
     self.changeAmenitiesButton.clipsToBounds = YES;
     
+    NSLog(@"from segue is now %@", self.fromSegue);
+    
     
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
@@ -69,7 +71,7 @@
         
         [self.fromSegue pinInBackground];
         
-        
+        NSLog(@"pinning in background");
 
         
     }else {
