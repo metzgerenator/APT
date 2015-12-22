@@ -136,12 +136,19 @@
     //apartmentInfo
     
   
+
     
     
     if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
         
+        //Make sure to initialize tabbar controller
         UITabBarController *tabar = segue.destinationViewController;
-        ApartmentInfoViewController *apartmentInfo = [tabar.viewControllers objectAtIndex:0];
+        UINavigationController *navBar = [[tabar viewControllers]objectAtIndex:0];
+        
+        ApartmentInfoViewController *apartmentInfo = [[navBar viewControllers]objectAtIndex:0];
+        
+       
+        
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         PFObject *objet = pfobjectStorage [selectedIndexPath.row];
         apartmentInfo.fromSegue = objet;
