@@ -49,7 +49,6 @@
     self.changeAmenitiesButton.layer.cornerRadius = 15;
     self.changeAmenitiesButton.clipsToBounds = YES;
     
-    NSLog(@"from segue is now %@", self.fromSegue);
     
     
     if (self.fromSegue) {
@@ -71,7 +70,6 @@
         
         [self.fromSegue pinInBackground];
         
-        NSLog(@"pinning in background");
 
         
     }else {
@@ -89,6 +87,41 @@
     }
     
    
+}
+
+#pragma mark - check for blank PFObjects
+
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    if (!self.fromSegue && [self.proPertyName.text length]!=0) {
+        
+        
+        
+        
+        
+        [self saveNewObject];
+        
+        
+        
+    }else if (!self.fromSegue && [self.proPertyName.text length]==0)
+    {
+        
+        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alertView addAction:defaultAction];
+        [self presentViewController:alertView animated:YES completion:nil];
+        
+        
+    }
+    
+//    if ([self.proPertyName.text length]==0) {
+//        NSLog(@"Current Pf object is null");
+//    }
+//    
+    
 }
 
 
@@ -337,6 +370,8 @@
         [self.fromSegue setObject:leasePrice forKey:@"leasePrice"];
         
         
+        [self.fromSegue pin];
+        
         [self.fromSegue saveInBackground];
         
     }else {
@@ -359,6 +394,7 @@
         
         self.fromSegue = apartMentObject;
         
+        [self.fromSegue pin];
         
         [apartMentObject saveInBackground];
         
@@ -416,6 +452,8 @@
     [apartMentObject setObject:leasePrice forKey:@"leasePrice"];
     
     [apartMentObject saveInBackground];
+        
+        
     
     }
     

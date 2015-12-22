@@ -33,19 +33,24 @@
     
     
     //check for PFOBject being nil
-    if (self.currentPFObject) {
+//    if (self.currentPFObject) {
+    
     
     
     //Query from Local Data
     
     PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
-    [query fromPin];
+    [query fromLocalDatastore];
     
+//    [query fromPin];
+  
     
     
     self.currentPFObject = [query getFirstObject];
    
+  
+    NSLog(@"currentPFobject is %@", self.currentPFObject);
     
     // current pfobject
     
@@ -62,21 +67,32 @@
     //set the navbar title
     self.navigationItem.title = [self.currentPFObject objectForKey:@"ApartmentName"];
         
-    } else {
-        [self alertView];
-        
-    }
+//    }
+//    
+//    else {
+//        [self alertView];
+//        
+//    }
     
     
 }
 
-
+#pragma mark - alertView
 -(void)alertView {
+    
     UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {}];
+                                                          handler:^(UIAlertAction * action) {
+                                                              self.tabBarController.selectedIndex = 0;
+                                                            
+                                                          
+                                                          }];
     
-    [alertView addAction:defaultAction];
+//    [alertView addAction:];
+   [alertView addAction:defaultAction];
+    
+  
+    
     [self presentViewController:alertView animated:YES completion:nil];
 }
 
