@@ -50,6 +50,12 @@
 @property(nonatomic,strong)PFObject *fromSegue;
 
 
+
+
+
+
+
+
 #pragma mark - save and back buttons
 
 

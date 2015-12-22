@@ -51,10 +51,22 @@
     
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
+        
+        //Nav Label
+        self.navigationItem.title = self.proPertyName.text; 
+       
+        
+        
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
         self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
         self.leasePrice.text = [NSString stringWithFormat:@"$%@",[self.fromSegue objectForKey:@"leasePrice"]];
-
+        
+  
+        
+        // Pin the object to local DataStorage
+        
+        PFObject *forLocalStorage = [[PFObject alloc]init];
+        [forLocalStorage pinInBackground];  
         
         
 
@@ -64,7 +76,7 @@
         
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
-        
+
 
 
        
@@ -74,8 +86,9 @@
     }
     
    
-    // Do any additional setup after loading the view.
 }
+
+
 
 
 
