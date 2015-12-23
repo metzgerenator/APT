@@ -43,14 +43,13 @@
     
     [query fromLocalDatastore];
     
-//    [query fromPin];
+
   
     
     
     self.currentPFObject = [query getFirstObject];
    
   
-    NSLog(@"currentPFobject is %@", self.currentPFObject);
     
     // current pfobject
     

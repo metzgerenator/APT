@@ -180,13 +180,13 @@
     NSString *amenityString = [amenityObject objectForKey:@"unitAmenities"];
     
     if ([sender isOn]) {
-        NSLog(@"swhitch is on %@", amenityString);
+//        NSLog(@"swhitch is on %@", amenityString);
         
         [amenitiesForParse addObject:amenityString];
         
         
     } else {
-        NSLog(@"switch is off");
+//        NSLog(@"switch is off");
         [amenitiesForParse removeObject:amenityString];
     }
     

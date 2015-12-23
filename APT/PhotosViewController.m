@@ -47,6 +47,22 @@
 }
 
 
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+    
+    [query fromLocalDatastore];
+    
+    
+    self.currentPfObject = [query getFirstObject];
+    
+//    keyForPfObject
+    self.keyForPfObject = [self.currentPfObject objectForKey:@"ApartmentName"];
+    
+    
+    
+}
+
 
 /*
 #pragma mark - Navigation
@@ -135,6 +151,10 @@
     PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
     [forPhotos setObject:imageFile forKey:@"apartmentPhotos"];
     
+    
+    
+    // Pin to local memory
+    [forPhotos pinInBackground]; 
     
     //upload to Parse
     

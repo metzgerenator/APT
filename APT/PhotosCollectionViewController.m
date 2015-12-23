@@ -19,20 +19,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-//    NSLog(@"value of pfobject is %@", self.pfObjectfromInfoView);
-    
-    // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    // Do any additional setup after loading the view.
+ 
 }
 
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self queryParseMethod];
+    //define pfobect from local data
+    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+    
+    [query fromLocalDatastore];
+    
+    
+    self.pfObjectfromInfoView = [query getFirstObject];
+    
+    if (self.pfObjectfromInfoView) {
+        [self queryParseMethod];
+    }
+    
+    
+    
+    //label nav bar
+    
+    self.navigationItem.title = [self.pfObjectfromInfoView objectForKey:@"ApartmentName"];
  
 }
 - (void)didReceiveMemoryWarning {
@@ -55,22 +64,23 @@
             
             
             [self.collectionView reloadData];
+            
+            // send user to add photos if nothing is found
+            if (objects.count == 0) {
+                
+                [self performSegueWithIdentifier:@"newPhoto" sender:self];
+                
+            }
+            
+            
         }
     }];
     
-    
+   
 }
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -113,20 +123,7 @@
 
 #pragma mark  - navigation
 
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    LargePhotoViewController *largephotocontroller = segue.destinationViewController;
-//    NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
-//    
-//    
-//    if ([segue.identifier isEqualToString:@"photo"]) {
-//        
-//        
-//        
-//        
-//        
-//        
-//    }
-//}
+
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -151,20 +148,6 @@
 
 
 
-
-                                           
-//                                           -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//                                               if ([segue.identifier isEqualToString:@"category"]) {
-//                                                   NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
-//                                                   UINavigationController *destViewController = segue.destinationViewController;
-//                                                   InputViewController *inputViewController = (InputViewController *)
-//                                                   [destViewController.childViewControllers firstObject];
-//                                                   NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-//                                                   inputViewController.categoryPictureName = [categoryImages objectAtIndex:indexPath.row];
-//                                                   ////        [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
-//                                                   
-//                                               }
-//                                           }
 
                                            
 
