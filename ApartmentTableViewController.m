@@ -125,7 +125,16 @@
     
     // Configure the cell...
     pfobjectStorage = self.objects;
-  
+    
+    //take off local memory 
+    
+    for (PFObject *d in self.objects) {
+        [d unpinInBackground];
+    }
+    
+    
+ 
+   
     
     cell.apartmentName.text = [object objectForKey:@"ApartmentName"];
     

@@ -109,7 +109,10 @@
         
         UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh No!" message:@"Make sure you name your property before continuing!" preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
+                                                              handler:^(UIAlertAction * action) {
+                                                                  self.tabBarController.selectedIndex = 0;
+                                                              
+                                                              }];
         
         [alertView addAction:defaultAction];
         [self presentViewController:alertView animated:YES completion:nil];
@@ -117,10 +120,7 @@
         
     }
     
-//    if ([self.proPertyName.text length]==0) {
-//        NSLog(@"Current Pf object is null");
-//    }
-//    
+    
     
 }
 
@@ -466,7 +466,7 @@
 
 - (IBAction)backButton:(id)sender {
     
-    [self.fromSegue unpinInBackground]; 
+    [self.fromSegue unpinInBackground];
     
     
     //instantiate view controller
@@ -481,6 +481,9 @@
 #pragma mark - map functions
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    //pin pfObject to memory
+    [self.fromSegue pinInBackground];
     
     //Check for PfObject being nill
     
@@ -549,29 +552,6 @@
 
     
 }
-
-
-
-
-//
-//-(void)zoomLocation {
-//    
-//    
-//    MKCoordinateRegion region;
-//    region.center = self.mapView.userLocation.coordinate;
-//    //Adjust span as you like
-//    MKCoordinateSpan span;
-//    span.latitudeDelta  = 1;
-//    span.longitudeDelta = 1;
-//    region.span = span;
-//    
-//    
-//    
-//}
-
-
-
-
 
 
 
