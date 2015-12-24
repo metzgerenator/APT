@@ -39,7 +39,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
     
-    [query fromPin];
+    [query fromLocalDatastore];
     
     self.currentPFObject = [query getFirstObject];
     

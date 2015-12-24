@@ -101,9 +101,28 @@
         
         //Whether the built-in pagination is enabled
         self.paginationEnabled = NO;
+        
+       
+    
     }
     return self;
 }
+
+
+
+//Take off of local memory
+
+
+-(void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    for (PFObject *d in self.objects) {
+        [d unpinInBackground];
+    }
+    
+}
+
+
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:
 (UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -128,9 +147,7 @@
     
     //take off local memory 
     
-    for (PFObject *d in self.objects) {
-        [d unpinInBackground];
-    }
+   
     
     
  

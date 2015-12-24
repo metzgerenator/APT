@@ -18,6 +18,7 @@
 
 
 
+
 @interface ApartmentInfoViewController ()
 
 @property (nonatomic) CLLocationManager *locationManager;
@@ -68,7 +69,7 @@
         // Pin the object to local DataStorage
         
         
-        [self.fromSegue pinInBackground];
+       
         
 
         
@@ -94,6 +95,10 @@
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
+    //pin pfObject to memory
+    [self.fromSegue pin];
+    
+    
     if (!self.fromSegue && [self.proPertyName.text length]!=0) {
         
         
@@ -482,8 +487,11 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    //pin pfObject to memory
-    [self.fromSegue pinInBackground];
+    //clear local memory
+    [self.fromSegue unpinInBackground];
+    
+    
+   
     
     //Check for PfObject being nill
     
