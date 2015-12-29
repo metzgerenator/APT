@@ -19,19 +19,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+
+    
  
+}
+
+
+
+#pragma mark - Notification
+-(void)triggerAction:(NSNotification *) notification
+{
+    
+    if ([[notification name] isEqualToString:@"test1"]) {
+        
+        self.pfObjectfromInfoView = [notification object];
+        
+        
+        
+    }
 }
 
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    //define pfobect from local data
-    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-    
-    [query fromLocalDatastore];
-    
-    
-    self.pfObjectfromInfoView = [query getFirstObject];
+
     
     if (self.pfObjectfromInfoView) {
         [self queryParseMethod];
