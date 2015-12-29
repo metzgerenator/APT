@@ -55,6 +55,15 @@
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         
+        
+        
+        //notification center
+        
+        
+        
+        
+        
+        
         //Nav Label
         self.navigationItem.title = self.proPertyName.text; 
        
@@ -96,6 +105,16 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     //pin pfObject to memory
+    
+    
+    //broadcast PFObject for reception 
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
+
+   
+
+    
+    
     [self.fromSegue pin];
     
     
@@ -486,6 +505,13 @@
 #pragma mark - map functions
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    
+    
+    
+    
+  
+
     
     //clear local memory
     [self.fromSegue unpinInBackground];

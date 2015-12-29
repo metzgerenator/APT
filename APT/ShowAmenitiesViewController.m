@@ -8,6 +8,7 @@
 
 #import "ShowAmenitiesViewController.h"
 #import "ShowAmenitiesTableViewCell.h"
+#import "ApartmentInfoViewController.h"
 
 
 @interface ShowAmenitiesViewController ()
@@ -18,6 +19,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -30,6 +34,9 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    
+    
+    
     
     
     //check for PFOBject being nil
@@ -75,6 +82,35 @@
     
     
 }
+
+
+
+
+
+#pragma mark - Notification
+-(void)triggerAction:(NSNotification *) notification
+{
+    NSLog(@"action triggered");
+//    
+//    if ([notification.object isKindOfClass:[ApartmentInfoViewController class]])
+//    {
+//        PFObject *message = [notification object];
+//        NSLog(@"message is %@", message);
+//        
+//        
+//        
+//    }
+//    
+    if ([[notification name] isEqualToString:@"test1"]) {
+        PFObject *message1 = [notification object];
+        
+        NSLog(@"this notification works %@", message1);
+        
+        
+    }
+}
+
+
 
 #pragma mark - alertView
 -(void)alertView {
