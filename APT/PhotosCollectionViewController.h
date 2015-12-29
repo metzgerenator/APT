@@ -20,5 +20,6 @@
 
 
 @property(nonatomic, strong) PFObject *pfObjectfromInfoView;
+- (IBAction)addPhotoButton:(id)sender;
 
 @end

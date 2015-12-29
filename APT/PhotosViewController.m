@@ -20,8 +20,8 @@
     [super viewDidLoad];
     
 #pragma mark - LaTiesha's Code
-    
-    
+    //nsnotificationCenter
+
     
     
     // rounding the corners of the sign up and login buttons
@@ -41,6 +41,7 @@
     // Do any additional setup after loading the view.
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -49,15 +50,16 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-    
-    [query fromLocalDatastore];
-    
-    
-    self.currentPfObject = [query getFirstObject];
+//    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
+//    
+//    [query fromLocalDatastore];
+//    
+//    
+//    self.currentPfObject = [query getFirstObject];
     
 //    keyForPfObject
     self.keyForPfObject = [self.currentPfObject objectForKey:@"ApartmentName"];
+
     
     
     
@@ -153,8 +155,7 @@
     
     
     
-    // Pin to local memory
-    [forPhotos pinInBackground]; 
+  
     
     //upload to Parse
     

@@ -88,7 +88,7 @@
                             <barButtonItem image="map icon" id="8Ut-1w-KXS">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Aln-tE-RtJ" kind="show" id="fTk-s8-yMn"/>
+                                    <segue destination="Aln-tE-RtJ" kind="push" id="fTk-s8-yMn"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -195,7 +195,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RwT-Hy-ISe" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="V3C-Fn-7Mz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4075.5" y="3672.5"/>
+            <point key="canvasLocation" x="3984.5" y="3579.5"/>
         </scene>
         <!--Photos Collection View Controller-->
         <scene sceneID="drZ-jM-Y4t">
@@ -238,10 +238,13 @@
                     <navigationItem key="navigationItem" id="Gbe-MG-6fM">
                         <barButtonItem key="rightBarButtonItem" title="Add Photo" id="zwa-xW-bgn">
                             <connections>
-                                <segue destination="YFO-GA-DJ3" kind="presentation" identifier="newPhoto" id="fFt-vd-caU"/>
+                                <action selector="addPhotoButton:" destination="jQu-wr-FxZ" id="9Zt-eM-jZW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="YFO-GA-DJ3" kind="presentation" identifier="newPhoto" id="pKv-1U-TLb"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgJ-xB-hV4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

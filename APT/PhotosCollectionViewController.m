@@ -8,6 +8,7 @@
 
 #import "PhotosCollectionViewController.h"
 #import "LargePhotoViewController.h"
+#import "PhotosViewController.h"
 
 @interface PhotosCollectionViewController ()
 
@@ -153,8 +154,14 @@
         destViewController.fileFromSegue  = imageFile;
         
     
-        }
-        }
+    }else if ([segue.identifier isEqualToString:@"newPhoto"]) {
+        PhotosViewController *destViewController = (PhotosViewController *)segue.destinationViewController;
+        destViewController.currentPfObject = self.pfObjectfromInfoView;
+        
+        
+        
+    }
+}
 
 
 
@@ -163,6 +170,11 @@
 
                                            
 
+#pragma mark - addPhotobutton
 
-
+- (IBAction)addPhotoButton:(id)sender {
+    
+    [self performSegueWithIdentifier:@"newPhoto" sender:self];
+    
+}
 @end
