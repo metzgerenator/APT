@@ -75,7 +75,6 @@
         
   
         
-        // Pin the object to local DataStorage
         
         
        
@@ -104,18 +103,13 @@
 
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
-    //pin pfObject to memory
     
     
     //broadcast PFObject for reception 
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
 
-   
 
-    
-    
-    [self.fromSegue pin];
     
     
     if (!self.fromSegue && [self.proPertyName.text length]!=0) {
@@ -394,8 +388,6 @@
         [self.fromSegue setObject:leasePrice forKey:@"leasePrice"];
         
         
-        [self.fromSegue pin];
-        
         [self.fromSegue saveInBackground];
         
     }else {
@@ -418,7 +410,6 @@
         
         self.fromSegue = apartMentObject;
         
-        [self.fromSegue pin];
         
         [apartMentObject saveInBackground];
         
@@ -490,7 +481,6 @@
 
 - (IBAction)backButton:(id)sender {
     
-    [self.fromSegue unpinInBackground];
     
     
     //instantiate view controller
@@ -506,15 +496,6 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    
-    
-    
-    
-  
-
-    
-    //clear local memory
-    [self.fromSegue unpinInBackground];
     
     
    

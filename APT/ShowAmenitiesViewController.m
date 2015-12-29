@@ -32,33 +32,14 @@
 
 
 
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    
-    
-    
-    
-    //check for PFOBject being nil
-//    if (self.currentPFObject) {
-    
-    
-    
-    //Query from Local Data
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-    
-    [query fromLocalDatastore];
-    
+-(void)viewDidAppear:(BOOL)animated
 
-  
+
+{
+   [super viewDidAppear:animated];
     
     
-    self.currentPFObject = [query getFirstObject];
-   
-  
     
-    // current pfobject
     
     NSString *bedRooms = [self.currentPFObject objectForKey:@"numberOfBedrooms"];
     NSString *bathRooms = [self.currentPFObject objectForKey:@"numberOfBathrooms"];
@@ -73,12 +54,7 @@
     //set the navbar title
     self.navigationItem.title = [self.currentPFObject objectForKey:@"ApartmentName"];
         
-//    }
-//    
-//    else {
-//        [self alertView];
-//        
-//    }
+
     
     
 }
@@ -90,21 +66,11 @@
 #pragma mark - Notification
 -(void)triggerAction:(NSNotification *) notification
 {
-    NSLog(@"action triggered");
-//    
-//    if ([notification.object isKindOfClass:[ApartmentInfoViewController class]])
-//    {
-//        PFObject *message = [notification object];
-//        NSLog(@"message is %@", message);
-//        
-//        
-//        
-//    }
-//    
+
     if ([[notification name] isEqualToString:@"test1"]) {
-        PFObject *message1 = [notification object];
         
-        NSLog(@"this notification works %@", message1);
+        self.currentPFObject = [notification object];
+        
         
         
     }
