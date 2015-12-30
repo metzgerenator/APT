@@ -35,31 +35,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.navigationController.navigationBarHidden = NO;
-    
-    
-#pragma mark - LaTiesha's Code
-    
-    // rounding the corners of the Amenties buttons
-    
-    self.viewAmenitiesButton.layer.cornerRadius = 15;
-    self.viewAmenitiesButton.clipsToBounds = YES;
-    
-    
-    self.changeAmenitiesButton.layer.cornerRadius = 15;
-    self.changeAmenitiesButton.clipsToBounds = YES;
-    
-    
-   
-    
-   
-}
-
-
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
     
     
     
@@ -90,12 +65,36 @@
         
         
     }
+
+    self.navigationController.navigationBarHidden = NO;
+    
+    
+#pragma mark - LaTiesha's Code
+    
+    // rounding the corners of the Amenties buttons
+    
+    self.viewAmenitiesButton.layer.cornerRadius = 15;
+    self.viewAmenitiesButton.clipsToBounds = YES;
+    
+    
+    self.changeAmenitiesButton.layer.cornerRadius = 15;
+    self.changeAmenitiesButton.clipsToBounds = YES;
+    
+    
+   
+    
+   
+}
+
+
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+   
     
     [self mapFunctions];
-    
-    
-    
-    
+   
 }
 
 
