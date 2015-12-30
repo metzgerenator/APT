@@ -36,9 +36,9 @@
 		57A2FC301BF7F98000F07FFB /* ApartmentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC2F1BF7F98000F07FFB /* ApartmentTableViewController.m */; };
 		57A2FC341BF817C000F07FFB /* ApartmentInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC331BF817C000F07FFB /* ApartmentInfoViewController.m */; };
 		57A2FC371BF8294100F07FFB /* ApartmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A2FC361BF8294100F07FFB /* ApartmentTableViewCell.m */; };
-		7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
-		7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
-		7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */; settings = {ASSET_TAGS = (); }; };
+		7B90ACCA1C1A8B7B002987C9 /* Property_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC71C1A8B7B002987C9 /* Property_Screen_1.jpg */; };
+		7B90ACCB1C1A8B7B002987C9 /* Amenities_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC81C1A8B7B002987C9 /* Amenities_Screen_1.jpg */; };
+		7B90ACCC1C1A8B7B002987C9 /* Properties_Screen_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7B90ACC91C1A8B7B002987C9 /* Properties_Screen_1.jpg */; };
 		AC1AFC64CF9D7BF6272F6CB2 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63636AE49F7641827187C0C6 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
