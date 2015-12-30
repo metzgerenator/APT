@@ -210,37 +210,79 @@
 
 #pragma mark - prepare for segue 
 
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
+//    
+//    
+//    if ([segue.identifier isEqualToString:@"map"]) {
+//        
+//    
+//    
+//    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
+//    // string for comparision
+//        NSString *mapString = sender.annotation.title;
+//  
+//    for (PFObject *storedPfObject in pfObjects) {
+//        
+//        // does string match annotation
+//        NSString *toCompare = [storedPfObject objectForKey:@"ApartmentName"];
+//        if ([toCompare isEqualToString:mapString]) {
+//            apartmentInfo.fromSegue = storedPfObject;
+//        }
+//      
+//        
+//    }
+//    
+//    
+//    }
+//    
+//    
+//}
+
+
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(MKAnnotationView *)sender {
     
     
     if ([segue.identifier isEqualToString:@"map"]) {
         
-    
-    
-    ApartmentInfoViewController *apartmentInfo = segue.destinationViewController;
-    // string for comparision
+        UITabBarController *tabar = segue.destinationViewController;
+        UINavigationController *navBar = [[tabar viewControllers]objectAtIndex:0];
+        
+        ApartmentInfoViewController *apartmentInfo = [[navBar viewControllers]objectAtIndex:0];
+        // string for comparision
         NSString *mapString = sender.annotation.title;
-  
-    for (PFObject *storedPfObject in pfObjects) {
         
-        // does string match annotation
-        NSString *toCompare = [storedPfObject objectForKey:@"ApartmentName"];
-        if ([toCompare isEqualToString:mapString]) {
-            apartmentInfo.fromSegue = storedPfObject;
+        for (PFObject *storedPfObject in pfObjects) {
+            
+            // does string match annotation
+            NSString *toCompare = [storedPfObject objectForKey:@"ApartmentName"];
+            if ([toCompare isEqualToString:mapString]) {
+                apartmentInfo.fromSegue = storedPfObject;
+            }
+            
+            
         }
-      
+        
         
     }
-    
-    
-    }
- 
-    
-   
     
     
 }
 
+
+
+//
+////Make sure to initialize tabbar controller
+//UITabBarController *tabar = segue.destinationViewController;
+//UINavigationController *navBar = [[tabar viewControllers]objectAtIndex:0];
+//
+//ApartmentInfoViewController *apartmentInfo = [[navBar viewControllers]objectAtIndex:0];
+//
+//
+//
+//NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+//PFObject *objet = pfobjectStorage [selectedIndexPath.row];
+//apartmentInfo.fromSegue = objet;
 
 
 
@@ -255,15 +297,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
 
 
 #pragma mark - logout function
