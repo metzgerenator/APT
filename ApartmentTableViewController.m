@@ -159,11 +159,6 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    //apartmentInfo
-    
-  
-
-    
     
     if ([[segue identifier] isEqualToString:@"apartmentInfo"]) {
         
@@ -178,8 +173,6 @@
         NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
         PFObject *objet = pfobjectStorage [selectedIndexPath.row];
         apartmentInfo.fromSegue = objet;
-        
-        
 
         
     }

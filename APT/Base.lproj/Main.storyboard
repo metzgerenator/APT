@@ -328,7 +328,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="y4o-HF-iTS">
-                                <rect key="frame" x="0.0" y="413" width="375" height="205"/>
+                                <rect key="frame" x="0.0" y="328" width="375" height="290"/>
                                 <connections>
                                     <outlet property="delegate" destination="r27-ru-dyf" id="i7q-h2-UQf"/>
                                 </connections>
@@ -350,20 +350,6 @@
                                 <color key="textColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ON-cd-MoO">
-                                <rect key="frame" x="267" y="380" width="102" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="102" id="E7E-fa-DJU"/>
-                                    <constraint firstAttribute="height" constant="30" id="jiZ-kv-4hw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <state key="normal" title="Change Location ">
-                                    <color key="titleColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="xB3-cm-MNg" kind="show" identifier="Map" id="ij5-yA-GMz"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="set price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DBc-lw-y4b">
                                 <rect key="frame" x="242" y="207" width="113" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -378,6 +364,20 @@
                                     <segue destination="CaN-mB-dwR" kind="presentation" identifier="apartMentInfo" id="Uc9-jN-FZS"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ON-cd-MoO">
+                                <rect key="frame" x="273" y="303" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="E7E-fa-DJU"/>
+                                    <constraint firstAttribute="height" constant="30" id="jiZ-kv-4hw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="Change Location ">
+                                    <color key="titleColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="xB3-cm-MNg" kind="show" identifier="Map" id="ij5-yA-GMz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -388,7 +388,7 @@
                             <constraint firstItem="ASC-0h-JQB" firstAttribute="leading" secondItem="KZG-7F-lj8" secondAttribute="leadingMargin" constant="31" id="AXV-es-Dx0"/>
                             <constraint firstItem="Fvl-hD-Mfa" firstAttribute="centerX" secondItem="y4o-HF-iTS" secondAttribute="centerX" id="Dwk-S2-Oax"/>
                             <constraint firstItem="DBc-lw-y4b" firstAttribute="centerX" secondItem="FNN-8D-Pu1" secondAttribute="centerX" id="EWu-MR-cxG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2ON-cd-MoO" secondAttribute="trailing" constant="-10" id="G1L-Ek-Qp1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2ON-cd-MoO" secondAttribute="trailing" constant="-20" id="G1L-Ek-Qp1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DBc-lw-y4b" secondAttribute="trailing" constant="4" id="JxH-2A-Mpo"/>
                             <constraint firstItem="pgu-iA-55b" firstAttribute="firstBaseline" secondItem="SSc-Ex-JAe" secondAttribute="firstBaseline" id="NN3-pz-UHc"/>
                             <constraint firstItem="SSc-Ex-JAe" firstAttribute="top" secondItem="n6a-eP-tmx" secondAttribute="bottom" constant="14" id="OkK-hV-6w2"/>
@@ -405,10 +405,10 @@
                             <constraint firstItem="n6a-eP-tmx" firstAttribute="centerX" secondItem="x5M-UL-nB9" secondAttribute="centerX" id="hvZ-Gj-DoE"/>
                             <constraint firstItem="ngi-Hk-8I0" firstAttribute="leading" secondItem="KZG-7F-lj8" secondAttribute="leadingMargin" constant="7" id="iPk-87-Bgc"/>
                             <constraint firstItem="x5M-UL-nB9" firstAttribute="centerY" secondItem="FNN-8D-Pu1" secondAttribute="centerY" id="mIX-Zl-otd"/>
-                            <constraint firstItem="2ON-cd-MoO" firstAttribute="top" secondItem="Fvl-hD-Mfa" secondAttribute="bottom" constant="85" id="nCi-9d-Cq6"/>
+                            <constraint firstItem="2ON-cd-MoO" firstAttribute="top" secondItem="Fvl-hD-Mfa" secondAttribute="bottom" constant="8" id="nCi-9d-Cq6"/>
                             <constraint firstItem="y4o-HF-iTS" firstAttribute="bottom" secondItem="qC5-z7-X41" secondAttribute="top" id="oTc-Ir-mVm"/>
                             <constraint firstItem="x5M-UL-nB9" firstAttribute="top" secondItem="ngi-Hk-8I0" secondAttribute="bottom" constant="12" id="oZb-rI-hYt"/>
-                            <constraint firstItem="y4o-HF-iTS" firstAttribute="top" secondItem="2ON-cd-MoO" secondAttribute="bottom" constant="3" id="qVT-V9-a6T"/>
+                            <constraint firstItem="y4o-HF-iTS" firstAttribute="top" secondItem="2ON-cd-MoO" secondAttribute="bottom" constant="-5" id="qVT-V9-a6T"/>
                             <constraint firstItem="ASC-0h-JQB" firstAttribute="leading" secondItem="n6a-eP-tmx" secondAttribute="leading" id="rYR-aP-6pT"/>
                             <constraint firstItem="n6a-eP-tmx" firstAttribute="top" secondItem="ASC-0h-JQB" secondAttribute="bottom" constant="9" id="rkh-Ic-kAP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FNN-8D-Pu1" secondAttribute="trailing" constant="46" id="uzs-CZ-B8g"/>

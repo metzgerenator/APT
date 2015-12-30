@@ -36,12 +36,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-    
-    [query fromLocalDatastore];
-    
-    self.currentPFObject = [query getFirstObject];
+
     
     self.arrayFromSegue = [self.currentPFObject objectForKey:@"amenities"];
     

@@ -50,14 +50,7 @@
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-//    PFQuery *query = [PFQuery queryWithClassName:@"apartments"];
-//    
-//    [query fromLocalDatastore];
-//    
-//    
-//    self.currentPfObject = [query getFirstObject];
-    
-//    keyForPfObject
+
     self.keyForPfObject = [self.currentPfObject objectForKey:@"ApartmentName"];
 
     

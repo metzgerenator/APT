@@ -9,6 +9,7 @@
 #import "ShowAmenitiesViewController.h"
 #import "ShowAmenitiesTableViewCell.h"
 #import "ApartmentInfoViewController.h"
+#import "EditAmenitiesViewController.h"
 
 
 @interface ShowAmenitiesViewController ()
@@ -139,5 +140,24 @@
     
     return cell;
 }
+
+
+
+#pragma mark - navigation 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"edit"]) {
+
+        EditAmenitiesViewController *editamenitiesViewController = (EditAmenitiesViewController *)segue.destinationViewController;
+        
+        editamenitiesViewController.currentPFObject = self.currentPFObject;
+        
+    
+    }
+    
+    
+    
+}
+
+
 
 @end
