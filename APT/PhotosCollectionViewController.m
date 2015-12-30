@@ -45,9 +45,13 @@
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 
+
+    
     
     if (self.pfObjectfromInfoView) {
         [self queryParseMethod];
+    }else {
+        [self reloadInputViews];
     }
     
     
@@ -62,6 +66,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+-(void) viewDidDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+   
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.pfObjectfromInfoView];
+    
+    
+}
 
 #pragma mark - query parse
 

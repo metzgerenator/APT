@@ -35,7 +35,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.navigationController.navigationBarHidden = NO;
     
     
@@ -51,52 +51,55 @@
     self.changeAmenitiesButton.clipsToBounds = YES;
     
     
+   
+    
+   
+}
+
+
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    
+    
     
     if (self.fromSegue) {
         self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
         
         
-        
-        //notification center
-        
-        
-        
-        
-        
-        
         //Nav Label
-        self.navigationItem.title = self.proPertyName.text; 
-       
+        self.navigationItem.title = self.proPertyName.text;
+        
         
         
         self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
         self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
         self.leasePrice.text = [NSString stringWithFormat:@"$%@",[self.fromSegue objectForKey:@"leasePrice"]];
         
-  
         
         
         
-       
-        
-
         
     }else {
         
         
         self.proPertyName.text = self.propertyString;
         self.LeaseLength.text = self.leaseString;
-
-
-
-       
-
+        
         
         
     }
     
-   
+    [self mapFunctions];
+    
+    
+    
+    
 }
+
+
+
 
 #pragma mark - check for blank PFObjects
 
@@ -105,10 +108,13 @@
     [super viewDidDisappear:animated];
     
     
-    //broadcast PFObject for reception 
+    //broadcast PFObject for reception
+    
+    if (self.fromSegue) {
     
     [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
 
+    }
 
     
     
@@ -141,6 +147,7 @@
     
     
 }
+
 
 
 
@@ -392,7 +399,7 @@
         
     }else {
         
-        
+        NSLog(@"saving new object");
         
         PFObject *apartMentObject = [PFObject objectWithClassName:@"apartments"];
         
@@ -408,10 +415,15 @@
         [apartMentObject setObject:leasePrice forKey:@"leasePrice"];
 
         
+//        self.fromSegue = apartMentObject;
+        
+        
+        
         self.fromSegue = apartMentObject;
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
         
         
-        [apartMentObject saveInBackground];
+        [apartMentObject save];
         
     }
 
@@ -492,54 +504,53 @@
 }
 
 
+
+
+
+
 #pragma mark - map functions
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+
+-(void)mapFunctions {
     
-    
-    
-   
-    
-    //Check for PfObject being nill
     
     if (self.fromSegue) {
-    
-    
-    //retrived PFGeoPoint from segue
-    
-    PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
-    
-    float coordinateLongitutde = forCoordinate.longitude;
-    float coordinateLatitude = forCoordinate.latitude;
-    
-    
-//    //Create MK Coordinate Region
-    MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
-    region.center.longitude = coordinateLongitutde;
-    region.center.latitude = coordinateLatitude;
-    self.boundingRegion = region;
-
-
-    
-    //get name from PFGeoPoint
-    NSString* name = [self.fromSegue objectForKey:@"location"];
-    
-
-    //create annotation and set it
-    MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
-    point.coordinate = region.center;
-    point.title = name;
-    
-   
-    
-    [self.mapView addAnnotation:point];
         
-    
-    [self.mapView setRegion:self.boundingRegion animated:YES];
-
+        
+        //retrived PFGeoPoint from segue
+        
+        PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
+        
+        float coordinateLongitutde = forCoordinate.longitude;
+        float coordinateLatitude = forCoordinate.latitude;
+        
+        
+        //    //Create MK Coordinate Region
+        MKCoordinateRegion region  = { {0.0, 0.0 }, { 0.0, 0.0 } };
+        region.center.longitude = coordinateLongitutde;
+        region.center.latitude = coordinateLatitude;
+        self.boundingRegion = region;
+        
+        
+        
+        //get name from PFGeoPoint
+        NSString* name = [self.fromSegue objectForKey:@"location"];
+        
+        
+        //create annotation and set it
+        MapViewAnnotation *point = [[MapViewAnnotation alloc]init];
+        point.coordinate = region.center;
+        point.title = name;
+        
+        
+        
+        [self.mapView addAnnotation:point];
+        
+        
+        [self.mapView setRegion:self.boundingRegion animated:YES];
+        
     } else {
         
-
+        
         
         
         
@@ -558,17 +569,16 @@
         
         
         self.mapView.showsUserLocation = YES;
-
+        
         self.mapView.zoomEnabled = YES;
         
         
         
     }
-
+    
+    
     
 }
-
-
 
 
 

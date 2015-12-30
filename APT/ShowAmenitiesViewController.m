@@ -36,10 +36,12 @@
 
 
 {
+    
+
    [super viewDidAppear:animated];
     
-    
-    
+    if (self.currentPFObject) {
+     
     
     NSString *bedRooms = [self.currentPFObject objectForKey:@"numberOfBedrooms"];
     NSString *bathRooms = [self.currentPFObject objectForKey:@"numberOfBathrooms"];
@@ -53,9 +55,18 @@
     
     //set the navbar title
     self.navigationItem.title = [self.currentPFObject objectForKey:@"ApartmentName"];
-        
+    }
+    else {
+        [self reloadInputViews];
+    }
 
     
+    
+}
+
+-(void) viewDidDisappear:(BOOL)animated {
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+     [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.currentPFObject];
     
 }
 
@@ -66,6 +77,8 @@
 #pragma mark - Notification
 -(void)triggerAction:(NSNotification *) notification
 {
+    
+    NSLog(@"trigger action!");
 
     if ([[notification name] isEqualToString:@"test1"]) {
         
