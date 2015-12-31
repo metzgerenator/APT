@@ -30,13 +30,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-
+    
 
 }
 
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
+    
+    
+   
+   
     
     self.arrayFromSegue = [self.currentPFObject objectForKey:@"amenities"];
     
@@ -100,8 +104,16 @@
     
     self.numberOfBathrooms.text = bathrooms;
     
+    //set the default values for the steppers 
+    
+    self.stepperBedrooms.value = [self.numberOfBedrooms.text doubleValue];
+    
+    self.stepperBathrooms.value = [self.numberOfBathrooms.text doubleValue];
+
     
     
+    
+  
     
 }
 
@@ -199,13 +211,15 @@
 #pragma mark - step controllers
 
 - (IBAction)stepControllerBedrooms:(UIStepper *)sender {
-   
+
     double value = sender.value;
     
     [self.numberOfBedrooms setText:[NSString stringWithFormat:@"%d", (int)value]];
     
 }
 - (IBAction)stepControllerBathrooms:(UIStepper *)sender {
+    
+    
     
      double value = sender.value;
     
@@ -219,6 +233,14 @@
 - (IBAction)saveToParse:(id)sender {
     
     // Save to Parse
+    
+    
+    if (!self.stepperBedrooms.value || !self.stepperBathrooms.value) {
+        
+        self.numberOfBedrooms.text = @"0";
+        
+        self.numberOfBathrooms.text = @"0";
+    }
     
     NSString *bedroomNumber = self.numberOfBedrooms.text ;
     NSString *bathRoomNumber = self.numberOfBathrooms.text;

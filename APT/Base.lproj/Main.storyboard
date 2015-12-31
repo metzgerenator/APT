@@ -774,6 +774,8 @@
                         <outlet property="TableView" destination="emU-1q-bHF" id="tvb-2f-4US"/>
                         <outlet property="numberOfBathrooms" destination="WjB-Ue-oDp" id="ioP-3Z-Inm"/>
                         <outlet property="numberOfBedrooms" destination="AgG-Kq-6lg" id="iIl-ic-xo4"/>
+                        <outlet property="stepperBathrooms" destination="aRB-lO-t33" id="QuO-q7-p8A"/>
+                        <outlet property="stepperBedrooms" destination="hbe-KV-GED" id="BSb-Oz-gXe"/>
                         <outlet property="tableView" destination="emU-1q-bHF" id="YrW-MT-umI"/>
                     </connections>
                 </viewController>

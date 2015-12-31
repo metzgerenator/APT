@@ -15,9 +15,13 @@
 
 - (IBAction)stepControllerBedrooms:(UIStepper *)sender;
 
+@property (weak, nonatomic) IBOutlet UIStepper *stepperBedrooms;
+
+
+
 @property (weak, nonatomic) IBOutlet UILabel *numberOfBedrooms;
 
-@property (nonatomic,strong)NSString *bedroomsString;
+//@property (nonatomic,strong)NSString *bedroomsString;
 
 
 
@@ -25,9 +29,13 @@
 
 - (IBAction)stepControllerBathrooms:(UIStepper *)sender;
 
+
+@property (weak, nonatomic) IBOutlet UIStepper *stepperBathrooms;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *numberOfBathrooms;
 
-@property (nonatomic,strong)NSString *bathroomsString;
+//@property (nonatomic,strong)NSString *bathroomsString;
 
 
 //SaveFunction
