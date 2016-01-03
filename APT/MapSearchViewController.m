@@ -20,7 +20,12 @@
 @end
 
 @implementation MapSearchViewController {
-    NSArray *placeMarks;  
+    NSArray *placeMarks;
+    
+    
+    NSMutableArray *contentList;
+    NSMutableArray *filteredContentList;
+    BOOL isSearching;
 }
 
 - (void)viewDidLoad {
@@ -41,17 +46,90 @@
 
 
 
+
+#pragma mark - UISearchBarDelegate
+
+
+- (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
+
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [self searchFunction];
+//    [self searchTableList];
+}
+
+
+#pragma mark - location manager
+
+
 -(void)startLocationManager{
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
-//    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+//    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
+    self.locationManager.distanceFilter = 10;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     
 //    [self.locationManager startUpdatingLocation];
     [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView.showsUserLocation = YES;
+    
+}
+
+
+
+
+#pragma mark - search function
+
+
+-(void)searchFunction {
+    
+    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
+    //    request.naturalLanguageQuery = self.searchTextField.text;
+    
+    request.naturalLanguageQuery = self.searchBar.text;
+    
+    
+    
+    //set the user region
+    request.region = self.mapView.region;
+    
+    //Create and initialize search object
+    
+    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
+        
+        
+        if (response) {
+            
+            
+            
+            //place search results in the array
+            placeMarks = [response mapItems];
+            
+            
+            
+            //setplaceMark Locations
+            
+            [self annotationLocation];
+            
+            
+            //load our two viewdidload methods
+            [self viewDidDisappear:YES];
+            [self viewDidAppear:YES];
+            
+        }
+        
+    };
+    
+    self.localSearch = [[MKLocalSearch alloc]initWithRequest:request];
+    [self.localSearch startWithCompletionHandler:completionHandler];
+    
+    
+    //Remove the keyboard after editing
+    
+    [self.view endEditing:YES];
+    
     
 }
 
@@ -235,57 +313,6 @@
 */
 
 
-#pragma mark - search bottun pressed
 
-- (IBAction)searchButton:(id)sender {
-    
-   
-        
-    
-    
-    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-    request.naturalLanguageQuery = self.searchTextField.text;
-    
-    //set the user region
-    request.region = self.mapView.region;
-    
-    //Create and initialize search object
-    
-    MKLocalSearchCompletionHandler completionHandler = ^(MKLocalSearchResponse *response, NSError *error){
-        
-        
-        if (response) {
-            
-        
-        
-        //place search results in the array
-        placeMarks = [response mapItems];
-            
-        
-        //setplaceMark Locations
-        
-        [self annotationLocation];
-        
-        
-        //load our two viewdidload methods
-        [self viewDidDisappear:YES];
-        [self viewDidAppear:YES];
-            
-        }
-        
-    };
-    
-    self.localSearch = [[MKLocalSearch alloc]initWithRequest:request];
-    [self.localSearch startWithCompletionHandler:completionHandler];
-    
-    
-    //Remove the keyboard after editing
-    
-    [self.view endEditing:YES];
 
-    
-    
-    
-    
-}
 @end
