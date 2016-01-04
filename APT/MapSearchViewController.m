@@ -51,12 +51,30 @@
 
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar {
-
+    
+    [searchBar resignFirstResponder];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
     [self searchFunction];
 //    [self searchTableList];
+   
+}
+
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    
+    isSearching = YES;
+    [searchBar setShowsCancelButton:YES animated:YES];
+}
+
+
+-(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+{
+    [searchBar setShowsCancelButton:NO animated:YES];
+    
+    isSearching = NO;
 }
 
 
@@ -66,11 +84,13 @@
 -(void)startLocationManager{
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-//    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
-    self.locationManager.distanceFilter = 10;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+////    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
+    self.locationManager.distanceFilter = 1;
+//    self.locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
     
-//    [self.locationManager startUpdatingLocation];
+    self.locationManager.desiredAccuracy = kCLDistanceFilterNone;
+//    
+////    [self.locationManager startUpdatingLocation];
     [self.locationManager requestWhenInUseAuthorization];
     
     self.mapView.showsUserLocation = YES;
