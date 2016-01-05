@@ -36,39 +36,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
-    
-    
-    if (self.fromSegue) {
-        self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
-        
-        
-        //Nav Label
-        self.navigationItem.title = self.proPertyName.text;
-        
-        
-        
-        self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
-        self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
-        self.leasePrice.text = [NSString stringWithFormat:@"$%@",[self.fromSegue objectForKey:@"leasePrice"]];
-        
-        
-        
-        
-        
-    }else {
-        
-        
-        self.proPertyName.text = self.propertyString;
-        self.LeaseLength.text = self.leaseString;
-        
-        
-        
-    }
-
-    self.navigationController.navigationBarHidden = NO;
-    
-    
+  
 #pragma mark - LaTiesha's Code
     
     // rounding the corners of the Amenties buttons
@@ -91,12 +59,62 @@
 -(void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
+    
+    //pull data from notification if null
+    
+    if (!self.fromSegue) {
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+    }
+    
+    // pull data from pfobject
+    if (self.fromSegue) {
+        self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
+        
+        
+        //Nav Label
+        self.navigationItem.title = self.proPertyName.text;
+        
+        
+        
+        self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
+        self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
+        self.leasePrice.text = [self.fromSegue objectForKey:@"leasePrice"];
+        
+        
+        
+        
+        
+    }else {
+        
+        
+        self.proPertyName.text = self.propertyString;
+        self.LeaseLength.text = self.leaseString;
+        
+        
+        
+    }
+    
+    self.navigationController.navigationBarHidden = NO;
    
     
     [self mapFunctions];
    
 }
 
+
+#pragma mark - Notification
+-(void)triggerAction:(NSNotification *) notification
+{
+    
+    
+    if ([[notification name] isEqualToString:@"test1"]) {
+        
+        self.fromSegue = [notification object];
+        
+        [self viewDidAppear:YES];
+        
+    }
+}
 
 
 
@@ -419,10 +437,13 @@
         
         
         self.fromSegue = apartMentObject;
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
+        NSLog(@"saving new object");
         
-        
-        [apartMentObject save];
+        [apartMentObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"test1" object:self.fromSegue];
+
+        }];
         
     }
 
@@ -512,9 +533,13 @@
 -(void)mapFunctions {
     
     
+    
+    
     if (self.fromSegue) {
         
-        
+        if (!self.mapView.userLocation) {
+       
+  
         //retrived PFGeoPoint from segue
         
         PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
@@ -546,6 +571,8 @@
         
         
         [self.mapView setRegion:self.boundingRegion animated:YES];
+            
+        }
         
     } else {
         
@@ -575,7 +602,8 @@
         
     }
     
-    
+
+
     
 }
 

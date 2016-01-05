@@ -271,18 +271,6 @@
 
 
 
-//
-////Make sure to initialize tabbar controller
-//UITabBarController *tabar = segue.destinationViewController;
-//UINavigationController *navBar = [[tabar viewControllers]objectAtIndex:0];
-//
-//ApartmentInfoViewController *apartmentInfo = [[navBar viewControllers]objectAtIndex:0];
-//
-//
-//
-//NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-//PFObject *objet = pfobjectStorage [selectedIndexPath.row];
-//apartmentInfo.fromSegue = objet;
 
 
 

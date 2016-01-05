@@ -34,10 +34,11 @@
         <scene sceneID="JnR-99-FMU">
             <objects>
                 <tableViewController id="KEJ-2j-BLC" customClass="ApartmentTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="241" sectionHeaderHeight="28" sectionFooterHeight="28" id="1LM-kr-CWc">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" rowHeight="241" sectionHeaderHeight="28" sectionFooterHeight="28" id="1LM-kr-CWc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" red="0.1764705882" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" rowHeight="241" id="rqS-5i-suD" customClass="ApartmentTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="375" height="241"/>
@@ -52,12 +53,20 @@
                                             <color key="textColor" red="0.21046331509999999" green="0.2424260778" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AmU-RK-bg2">
+                                            <rect key="frame" x="8" y="8" width="334" height="232"/>
+                                            <color key="backgroundColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="0.35999999999999999" colorSpace="calibratedRGB"/>
+                                        </imageView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="leading" secondItem="ebd-wg-GHL" secondAttribute="leadingMargin" constant="27" id="87I-mF-oUy"/>
-                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="centerY" secondItem="ebd-wg-GHL" secondAttribute="centerY" id="h4J-P0-R5S"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="q6e-nv-4TT" secondAttribute="trailing" constant="20" id="nZK-rY-1Ul"/>
-                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="top" secondItem="ebd-wg-GHL" secondAttribute="topMargin" constant="91" id="pFh-im-Yap"/>
+                                        <constraint firstItem="AmU-RK-bg2" firstAttribute="centerX" secondItem="q6e-nv-4TT" secondAttribute="centerX" id="5x4-vp-jSu"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="q6e-nv-4TT" secondAttribute="trailing" constant="20" id="8D7-dW-2Ds"/>
+                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="leading" secondItem="ebd-wg-GHL" secondAttribute="leadingMargin" constant="27" id="CUb-Q8-3cQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="AmU-RK-bg2" secondAttribute="bottom" id="FG2-gd-fAA"/>
+                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="centerY" secondItem="ebd-wg-GHL" secondAttribute="centerY" id="Iz4-Vv-Cnh"/>
+                                        <constraint firstItem="AmU-RK-bg2" firstAttribute="leading" secondItem="ebd-wg-GHL" secondAttribute="leadingMargin" id="Poh-gH-kVu"/>
+                                        <constraint firstItem="q6e-nv-4TT" firstAttribute="top" secondItem="ebd-wg-GHL" secondAttribute="topMargin" constant="91" id="re0-Uj-GRI"/>
+                                        <constraint firstItem="AmU-RK-bg2" firstAttribute="top" secondItem="ebd-wg-GHL" secondAttribute="topMargin" id="ycU-bz-7ry"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -102,7 +111,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bTK-OL-uhA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-317.8125" y="237.14788732394365"/>
+            <point key="canvasLocation" x="-318.5" y="236.5"/>
         </scene>
         <!--Photos View Controller-->
         <scene sceneID="Tjq-0O-8mx">
@@ -1339,11 +1348,11 @@
             </objects>
             <point key="canvasLocation" x="2520" y="1037"/>
         </scene>
-        <!--Summery-->
+        <!--Summary-->
         <scene sceneID="O70-7c-80i">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ERF-Bm-qst" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Summery" id="DgY-Oc-EVc"/>
+                    <tabBarItem key="tabBarItem" title="Summary" id="DgY-Oc-EVc"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1fd-Wb-327">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1358,11 +1367,11 @@
             </objects>
             <point key="canvasLocation" x="3367.5" y="1041.5"/>
         </scene>
-        <!--ammenities -->
+        <!--Amenities -->
         <scene sceneID="pes-34-qSs">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tlg-Wq-7EI" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="ammenities " id="cFo-rE-YgV"/>
+                    <tabBarItem key="tabBarItem" title="Amenities " id="cFo-rE-YgV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2fn-da-ZOU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -1405,6 +1414,6 @@
         <image name="trying something out" width="341" height="36"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DTb-wA-2R8"/>
+        <segue reference="oiO-qn-tDM"/>
     </inferredMetricsTieBreakers>
 </document>

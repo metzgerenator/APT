@@ -21,7 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+    
+    if (!self.currentPFObject) {
+        NSLog(@"nothing to show");
+    
+    }
     
     // Do any additional setup after loading the view.
 }
@@ -34,7 +41,7 @@
 
 
 -(void)viewDidAppear:(BOOL)animated
-
+    
 
 {
     
@@ -58,7 +65,9 @@
     self.navigationItem.title = [self.currentPFObject objectForKey:@"ApartmentName"];
     }
     else {
-        [self reloadInputViews];
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+        
+//        [self reloadInputViews];
     }
 
     
@@ -79,13 +88,12 @@
 -(void)triggerAction:(NSNotification *) notification
 {
     
-    NSLog(@"trigger action!");
 
     if ([[notification name] isEqualToString:@"test1"]) {
         
         self.currentPFObject = [notification object];
         
-        
+        [self viewDidAppear:YES];
         
     }
 }

@@ -36,7 +36,7 @@
         
         self.pfObjectfromInfoView = [notification object];
         
-        
+        [self viewDidAppear:YES];
         
     }
 }
@@ -51,7 +51,10 @@
     if (self.pfObjectfromInfoView) {
         [self queryParseMethod];
     }else {
-        [self reloadInputViews];
+//        [self reloadInputViews];
+        
+        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(triggerAction:) name:@"test1" object:nil];
+        
     }
     
     
