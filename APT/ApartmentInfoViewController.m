@@ -31,12 +31,15 @@
 
 @implementation ApartmentInfoViewController {
     NSArray *placeMarks;
+    
+    BOOL updateFields;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-  
+    
+   updateFields = YES;
 #pragma mark - LaTiesha's Code
     
     // rounding the corners of the Amenties buttons
@@ -68,31 +71,32 @@
     
     // pull data from pfobject
     if (self.fromSegue) {
-        self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
+        // get strings from parse
+        
+        if (updateFields == YES) {
+            self.proPertyName.text = [self.fromSegue objectForKey:@"ApartmentName"];
+            
+            self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
+            
+            self.leasePrice.text = [self.fromSegue objectForKey:@"leasePrice"];
+            
+            self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
+
+        }
+        
+        
+        
+        
+        
         
         
         //Nav Label
         self.navigationItem.title = self.proPertyName.text;
         
         
-        
-        self.LeaseLength.text = [self.fromSegue objectForKey:@"leaseLength"];
-        self.appointmentDateLabel.text = [self.fromSegue objectForKey:@"apointmentTime"];
-        self.leasePrice.text = [self.fromSegue objectForKey:@"leasePrice"];
-        
-        
-        
-        
-        
-    }else {
-        
-        
-        self.proPertyName.text = self.propertyString;
-        self.LeaseLength.text = self.leaseString;
-        
-        
-        
     }
+    
+
     
     self.navigationController.navigationBarHidden = NO;
    
@@ -124,7 +128,7 @@
 -(void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     
-    
+    updateFields = NO;
     //broadcast PFObject for reception
     
     if (self.fromSegue) {
@@ -182,11 +186,15 @@
     if ([segue.sourceViewController isKindOfClass:[CreateAptViewController class]]) {
         CreateAptViewController *createAptView = segue.sourceViewController;
         if (createAptView.combinedDateAndTime) {
+            
+            // prevent date from changing back
+            
             self.appointmentTime = createAptView.combinedDateAndTime;
             self.appointmentDateLabel.text = self.appointmentTime;
+            
+            
+            
             NSLog(@"%@",self.appointmentTime);
-        }else {
-            self.appointmentDateLabel.text = @"click Edit";
         }
       
     
@@ -537,9 +545,7 @@
     
     if (self.fromSegue) {
         
-        if (!self.mapView.userLocation) {
-       
-  
+        
         //retrived PFGeoPoint from segue
         
         PFGeoPoint *forCoordinate = [self.fromSegue objectForKey:@"locationCoordinates"];
@@ -572,7 +578,7 @@
         
         [self.mapView setRegion:self.boundingRegion animated:YES];
             
-        }
+        
         
     } else {
         
